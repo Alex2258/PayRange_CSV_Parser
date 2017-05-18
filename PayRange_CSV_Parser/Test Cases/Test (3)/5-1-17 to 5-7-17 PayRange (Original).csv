@@ -1,0 +1,1311 @@
+Device ID,Location,City,State,Zip Code,Display Name,Machine ID,Tags,Mobile (#),Mobile (%),Mobile,Cash,Card,Total,Fee,Discounts,Loyalty,Promotions (!),Net
+10000287,"Breakroom
+711 Centerview Blvd
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Hobby Lobby - Drink,,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10000289,"Hobby Lobby Snack
+711 Centerview Blvd
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Hobby Lobby - Snack,,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10000290,"
+1925 Prospect Avenue
+Orlando
+FL
+32814
+",Orlando,FL,32814,Cuhaci & Peterson - Snack Machine,2214,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10006993,"100 Technology Parkway
+Suite 155
+Lake Mary
+FL
+32746
+",Lake Mary,FL,32746,Avella Snack,2284,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10006994,"""
+100  Technology Parkway, Suite 144
+Lake Mary
+FL
+32746
+""",Lake Mary,FL,32746,Avella - Beverage Machine,2386,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10006995,"GoCo Breakroom - Glassfront Beverage Machine
+4545 36th Street
+Orlando
+FL
+32811
+",Orlando,FL,32811,GoCo Glassfront Beverage Machine,2110,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10006996,"4th Fl Break Room
+2500 Maitland Center Parkway
+Maitlando
+FL
+32888
+",Maitlando,FL,32888,I Heart Media 4th Fl Coke,2495,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10006997,"""Fast Mile
+2900 Titan Row, Suite 114
+Orlando
+FL
+32809
+""",Orlando,FL,32809,Fast Mile - Snack Machine,Fast Mile - Snack Machine,promo,22,22.41,$23.25 ,$80.50 ,$0.00 ,$103.75 ,$0.93 ,$1.00 ,$0.00 ,$0.00 ,$21.32 
+10006998,"2nd Fl Break room
+11486 Corporate Boulevard
+Orlando
+FL
+32817
+",Orlando,FL,32817,Bank of NY Rouse - 2nd Fl Beverage,2241,promo,1,50,$0.75 ,$0.75 ,$0.00 ,$1.50 ,$0.03 ,$0.00 ,$0.00 ,$0.00 ,$0.72 
+10006999,"""GoCo Breakroom - Snack Machine
+4545 36th Street, Suite 141
+Orlando
+FL
+32811
+""",Orlando,FL,32811,GOCO Snack / Cold Food,2110,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10007000,"Mondelez Snack BreakRoom
+1000 Mid Florida Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Mondelez - Snack Machine,2137,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10007001,"Mondelez Breakroom
+1000 Mid Florida Dr
+Orlando
+FL
+2824
+",Orlando,FL,2824,Mondelez - Cold Food,2060,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10007002,"Mondelez Drink Break Room
+1000 Mid Florida Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Mondelez - Pepsi Stacker,2133,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10007003,"Teacher Cafe
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Teacher Cafe - # 13 Snack Machine,2199,promo,1,6.25,$0.75 ,$11.25 ,$0.00 ,$12.00 ,$0.03 ,$0.00 ,$0.00 ,$0.00 ,$0.72 
+10007004,"Teacher Mailroom
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Teacher Mailroom - Snack # 14,2158,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020973,"""
+2500 Maitland Center Parkway, Suite # 5
+Maitland
+FL
+32751
+""",Maitland,FL,32751,IH eart Media 3rd Fl - Pepsi Machine,3055,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020974,"Outside Cafe Bldg 5 Coke
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Coke # 11,2160,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020975,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Teacher Cafe Coke # 7,2112,promo,1,50,$1.25 ,$1.25 ,$0.00 ,$2.50 ,$0.05 ,$0.00 ,$0.00 ,$0.00 ,$1.20 
+10020976,"
+FL
+32750
+",,FL,32750,Warehouse- Snack Machine,,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020977,"United Baggage Area
+1 Jeff Fuqua Blvd
+Orlando
+FL
+32827
+",Orlando,FL,32827,United Baggage - Pepsi,2138,promo,3,7.74,$3.00 ,$35.75 ,$0.00 ,$38.75 ,$0.12 ,$0.00 ,$0.00 ,$0.00 ,$2.88 
+10020978,"Hagerty HS Gym Bldg 4 Coke
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Coke # 12,2176,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020979,"Teaher Mail Rm Coke
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Coke # 15,2166,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020980,"Outside Cafe Bldg 5 Pepsi
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Pepsi # 5,# 5,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020981,"Hagerty HS # 7
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS - Pepsi # 7,2186,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020982,"""Breakroom
+8427 South Park Circle, Suite 210
+Orlando
+FL
+32819
+""",Orlando,FL,32819,Vacation Innovation - Combo,2036,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020983,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Pepsi # 9,2182,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10020984,"3rd Floor Break Room
+11486 Corporate Boulevard
+Orlando
+FL
+32817
+",Orlando,FL,32817,Bank of NY Rouse - 3rd Fl Snack,2276,promo,9,16.17,$9.20 ,$47.70 ,$0.00 ,$56.90 ,$0.38 ,$0.00 ,$0.00 ,$0.00 ,$8.82 
+10021009,"United Baggage Room - Beverage
+1 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,United Baggage - Soda,3087,promo,1,3.95,$0.75 ,$18.25 ,$0.00 ,$19.00 ,$0.03 ,$0.75 ,$0.00 ,$0.00 ,($0.03)
+10021010,"Carley Corporation
+12802 Science Drive
+Orlando
+FL
+32826
+",Orlando,FL,32826,Carley - Beverage Machine,Carley - Soda,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021011,"Ring Power
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power - Pepsi Main Breakroom,2144 Pepsi Stacker,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021012,"Carley Corporation
+12802 Science Drive
+Orlando
+FL
+32826
+",Orlando,FL,32826,Carley - Snack Machine,Carley Snack,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021013,"Ring Power
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power Beverage - Track Shop,2104 Generic Stacker Ring Power,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021014,"American Baggage - Beverage
+1 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,American Baggage - Beverage,3062,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021015,"Orlando International Airport
+Orlando
+FL
+32724
+",Orlando,FL,32724,United Ops Beverage machine,2174,promo,13,37.14,$19.50 ,$33.00 ,$0.00 ,$52.50 ,$0.78 ,$3.00 ,$0.00 ,$1.50 ,$15.72 
+10021016,"Ring Power
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power - Snack Main Breakroom,2103 Ring Power Snack Main Breakroom,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021017,"Ring Power
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power - Coke Machine - Rental Office,2127 Coke Stacker Ring Power,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021018,"Ring Power Office / Parts
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power - Snack Office / Parts RP,2032 Snack Office Parts Ring Power,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021019,"Ring Power
+9901 Ringhaver Dr
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power Coke Machine - Main Breakroom,2107 Coke Stacker Main Breakroom,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10021020,"Hagerty HS Pepsi # 1 Sm Gym
+3225 Lockwood Blvd
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Pepsi # 1 Sm Gym,861,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023085,"""Fast Mile Drink Breakroom
+2900 Titan Row, Suite 114
+Orlando
+FL
+32809
+""",Orlando,FL,32809,Fast Mile - Coke Machine,2293,promo,21,16.73,$30.75 ,$153.00 ,$0.00 ,$183.75 ,$1.23 ,$4.50 ,$0.00 ,$0.00 ,$25.02 
+10023086,"Warehouse
+950 Bennett Road
+Orlando
+FL
+32803
+",Orlando,FL,32803,Fed-Ex Bennett - Beverage,2097,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023087,"Lasership
+2900 Titan Row
+Orlando
+FL
+32809
+",Orlando,FL,32809,Lasership - Snack,2058,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023088,"L-3 OBT Stacker
+2500 N. Orange Blossom Trail
+Orlando
+FL
+32804
+",Orlando,FL,32804,L-3 OBT - Drink Machine,2215,promo,2,5.45,$1.50 ,$26.00 ,$0.00 ,$27.50 ,$0.06 ,$0.00 ,$0.00 ,$0.00 ,$1.44 
+10023089,"
+FL
+32750
+",,FL,32750,Warehouse ?,2116,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023090,"Jerry Leigh
+2242 Taft Vineland Rd.
+Orlando
+FL
+32837
+",Orlando,FL,32837,Jerry Leigh - Beverage Machine,2232,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023091,"Oracle
+7453 TG Lee Blvd
+Orlando
+FL
+32822
+",Orlando,FL,32822,Oracle - Snack,None,promo,37,28.62,$41.00 ,$102.25 ,$0.00 ,$143.25 ,$1.64 ,$4.00 ,$0.00 ,$0.00 ,$35.36 
+10023092,"L-3 OBT Snack
+2500 N. Orange Blossom Trail
+Orlando
+FL
+32804
+",Orlando,FL,32804,L-3 OBT - Snack Machine,2200,promo,2,5.43,$1.90 ,$33.10 ,$0.00 ,$35.00 ,$0.08 ,$1.00 ,$0.00 ,$0.00 ,$0.82 
+10023093,"L-3 Coleman
+7675 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,L-3 Coleman - Snack,2236,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023094,"L-3 Coleman
+7675 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,L-3 Coleman - GlassFront Beverage,2259,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023095,"""Axium Healthcare Snack Machine
+525 Technology Park, Suite 153
+Lake Mary
+FL
+32746
+""",Lake Mary,FL,32746,Axium Healthcare - Snack Machine,None,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+10023096,"""Axium Healthcare Drink Machine
+525 Technology Park, Suite 153
+Lake Mary
+FL
+32746
+""",Lake Mary,FL,32746,Axium Healthcare - Drink Machine,None,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003487,"Breakroom
+1001 Heathrow Park Lane
+lake Mary
+FL
+32746
+",lake Mary,FL,32746,Paychex Snack,2207,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003488,"1865 Florida 436
+Winter Park
+32792
+",Winter Park,32792,,Herzing Snack,missing asset tag,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003489,"400 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Mitsubishi 5th FL Coke,,promo,4,18.6,$6.00 ,$20.50 ,$5.75 ,$32.25 ,$0.32 ,$0.00 ,$0.00 ,$0.00 ,$5.68 
+20003490,"Waiting Area
+4113 South Orlando Drive
+Sanford
+FL
+32773
+",Sanford,FL,32773,Subaru Drink,2315,promo,1,7.58,$1.25 ,$15.25 ,$0.00 ,$16.50 ,$0.07 ,$0.00 ,$0.00 ,$0.00 ,$1.18 
+20003491,"283 Cranes Roost Blvd
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Altamonte Lakeside Snack ,2268,promo,5,100,$5.50 ,$0.00 ,$0.00 ,$5.50 ,$0.29 ,$0.00 ,$0.00 ,$0.00 ,$5.21 
+20003492,"3rd Fl Breakroom
+300 Colonial Center
+Lake Mary
+32746
+32746
+",Lake Mary,32746,32746,Pershing Snack,2098,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003493,"
+Florida 436
+Winter Park
+FL
+32792
+",Winter Park,FL,32792,Herzing Glassfront Pepsi,2043,promo,2,3.68,$3.75 ,$46.50 ,$51.75 ,$102.00 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.55 
+20003494,"1001 Heathrow Park Ln
+Lake Mary
+32746
+",Lake Mary,32746,,Paychex Coke,2159,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003495,"240 E Central Pkwy
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Center Pointe One Soda,2152,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003496,"400 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Mitsubishi 4th FL Snack,2181,promo,1,4.63,$1.25 ,$12.70 ,$13.05 ,$27.00 ,$0.07 ,$0.00 ,$0.00 ,$0.00 ,$1.18 
+20003497,"3rd Fl Breakroom
+300 Colonial Center
+Lake Mary
+32746
+32746
+",Lake Mary,32746,32746,Pershing Coke Glass,2331,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20003498,"2nd Floor 2nd Building
+332 North Magnolia Avenue
+Orlando
+FL
+32801
+",Orlando,FL,32801,DBKMSN 2nd Fl Combo Machine,2263,promo,17,100,$18.15 ,$0.00 ,$0.00 ,$18.15 ,$1.00 ,$0.00 ,$0.00 ,$0.00 ,$17.15 
+20004231,"240 E Central Pkwy
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Center Pointe One Snack ,2026,promo,3,6.08,$2.75 ,$15.00 ,$27.50 ,$45.25 ,$0.14 ,$0.00 ,$0.00 ,$0.00 ,$2.61 
+20004232,"220 E Central Pkwy
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Center Pointe Two - Snack,2224,promo,13,11.73,$14.75 ,$68.65 ,$42.35 ,$125.75 ,$0.79 ,$1.00 ,$0.00 ,$0.00 ,$12.96 
+20004233,"2nd Fl Breakroom
+332 North Magnolia Avenue
+Orlando
+FL
+32801
+",Orlando,FL,32801,DBKSMN 2ND FL snack,2288,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004234,"2nd Floor
+332 North Magnolia Avenue
+Orlando
+FL
+32801
+",Orlando,FL,32801,DBKMSN 2nd Fl Pepsi,2254,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004235,"400 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Mitsubishi 4th FL Coke,2096,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004236,"485 N Keller Rd
+Maitland
+32751
+",Maitland,32751,,Allstate Pepsi,2044,promo,8,11.27,$6.00 ,$47.25 ,$0.00 ,$53.25 ,$0.32 ,$0.00 ,$0.00 ,$0.00 ,$5.68 
+20004237,"
+12661 Challenger Parkway
+Orlando
+FL
+32826
+",Orlando,FL,32826,JNR Snack Machine,2355,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004238,"400 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Mitsubishi 5th FL Snack,2231,promo,5,100,$6.25 ,$0.00 ,$0.00 ,$6.25 ,$0.33 ,$0.00 ,$0.00 ,$0.00 ,$5.92 
+20004239,"485 N Keller Rd
+Maitland
+32751
+",Maitland,32751,,Allstate Snack,2050,promo,3,9.78,$3.50 ,$32.30 ,$0.00 ,$35.80 ,$0.19 ,$0.00 ,$0.00 ,$0.00 ,$3.31 
+20004240,"12661 Challenger Pkwy
+Orlando
+32826
+",Orlando,32826,,JNR Drink Machine,2413,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004241,"
+8675 Commodity Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Chrysler - Snack Maintenance,2170,promo,,,$0.00 ,$9.90 ,$5.45 ,$15.35 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004242,"100 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Bank of NY LM 3rd FL Pepsi Glass,2472,promo,1,3.85,$1.50 ,$16.00 ,$21.50 ,$39.00 ,$0.08 ,$0.00 ,$0.00 ,$0.00 ,$1.42 
+20004267,"
+1002 North Semoran Boulevard
+Orlando
+FL
+32807
+",Orlando,FL,32807,Orlando Methadone Snack Machine,2126,promo,1,4.34,$1.25 ,$27.55 ,$0.00 ,$28.80 ,$0.07 ,$0.00 ,$0.00 ,$0.00 ,$1.18 
+20004268,"8675 Commodity Cir
+Orlando
+32819
+",Orlando,32819,,Chrysler Showroom Coke Beverage ,2091,promo,5,4.01,$7.50 ,$76.75 ,$102.75 ,$187.00 ,$0.42 ,$0.00 ,$0.00 ,$0.00 ,$7.08 
+20004269,"2nd Fl Employee Break Rm
+8675 Commodity Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Chrysler 2nd Fl Employee Break Rm Snack,2163,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004270,"
+5175 West Irlo Bronson Memorial Highway
+Kissimmee
+FL
+34746
+",Kissimmee,FL,34746,Camping World - Pepsi Glassfront,2297,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004271,"
+330 Carswell Avenue
+Holly Hill
+FL
+32117
+",Holly Hill,FL,32117,Product Quest - Ice Cream,2018,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004272,"
+8541 South Park Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Strayer Sand Lake - Beverage,,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004273,"2nd Fl Employee Break Rm
+8675 Commodity Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Chrysler 2nd Fl Employee Break Rm Drink,2161,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004274,"
+201 Dyer Boulevard
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Signature Flight Kissimmee - Snack Machine,2238,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004275,"Maintenance Shop
+8675 Commodity Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Chrysler Maint Shop - Beverage,2216,promo,,,$0.00 ,$30.25 ,$32.50 ,$62.75 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004276,"
+8541 South Park Circle
+Orlando
+FL
+32819
+",Orlando,FL,32819,Strayer Sand Lake - Snack,2226,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004277,"
+Orlando
+FL
+",Orlando,FL,,Dave School - Glass Front Beverage,2168,promo,3,5.59,$8.00 ,$135.00 ,$0.00 ,$143.00 ,$0.44 ,$0.00 ,$0.00 ,$0.00 ,$7.56 
+20004278,"
+1002 North Semoran Boulevard
+Orlando
+FL
+32807
+",Orlando,FL,32807,Orlando Methadone Coke Machine,2146,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004303,"Coca-Cola Apopka
+2651 Orange Ave
+Apopka
+FL
+32703
+",Apopka,FL,32703,Coca-Cola Breakroom - Snack Machine,2029,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004304,"3rd FL
+2500 Universal Studios Plaza
+Orlando
+FL
+32819
+",Orlando,FL,32819,Warehouse from Dave School Glass Bev,2087,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004305,"8545 Commodity Cir
+Orlando
+32819
+",Orlando,32819,,Vacation Innovation Pepsi Glass,2221,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004306,"100 Colonial Center Pkwy
+Lake Mary
+32746
+",Lake Mary,32746,,Bank of NY LM 4th FL Soda,2382,promo,1,100,$0.75 ,$0.00 ,$0.00 ,$0.75 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20004307,"283 Cranes Roost Blvd
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Altamonte Lakeside Soda,2045,promo,4,36.36,$4.00 ,$7.00 ,$0.00 ,$11.00 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.80 
+20004308,"Production Plaza
+Orlando
+32819
+",Orlando,32819,,Dave School 3rd Fl Snack,2352,promo,2,2.61,$2.25 ,$18.10 ,$65.70 ,$86.05 ,$0.12 ,$0.00 ,$0.00 ,$0.00 ,$2.13 
+20004309,"8545 Commodity Cir
+Orlando
+32819
+",Orlando,32819,,Vacation Innovation Cold Food,2089,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004310,"
+2500 Universal Studios Plaza
+Orlando
+FL
+32819
+",Orlando,FL,32819,Dave School 1st Fl Pepsi,2122,promo,3,23.48,$3.10 ,$10.10 ,$0.00 ,$13.20 ,$0.18 ,$0.00 ,$0.00 ,$0.00 ,$2.92 
+20004311,"8545 Commodity Cir
+Orlando
+32819
+",Orlando,32819,,Vacation Innovation Snack,2260,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004312,"2500 Maitland Center Pkwy
+Maitland
+FL
+",Maitland,FL,,Colonial Management Group - Snack Machine,2318,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004313,"
+2500 Universal Studios Plaza
+Orlando
+FL
+32819
+",Orlando,FL,32819,Dave School 2nd Fl Drink,2285,promo,3,7.2,$4.95 ,$1.65 ,$62.15 ,$68.75 ,$0.27 ,$0.00 ,$0.00 ,$0.00 ,$4.68 
+20004314,"2nd FL
+2500 Universal Studios Plaza
+Orlando
+FL
+32819
+",Orlando,FL,32819,Dave School 2nd FL Snack,2188,promo,3,4.05,$3.25 ,$22.70 ,$54.30 ,$80.25 ,$0.17 ,$0.00 ,$0.00 ,$0.00 ,$3.08 
+20004615,"FDLRS
+3130 Edgewater Drive
+Orlando
+FL
+32804
+",Orlando,FL,32804,FDLRS Soda,2466,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004616,"Orlando International Airport
+Airport
+Tavares
+FL
+32778
+",Tavares,FL,32778,United Ticketing - Cold Drinks Machine,2235,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004617,"
+3130 Edgewater Drive
+Orlando
+FL
+32804
+",Orlando,FL,32804,FDLRS - Snack Machine,2358,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004618,"AKT
+6424 Forest City Road
+Orlando
+FL
+32810
+",Orlando,FL,32810,AKT Soda,2003,,10,51.81,$10.75 ,$10.00 ,$0.00 ,$20.75 ,$0.56 ,$3.00 ,$0.00 ,$0.00 ,$7.19 
+20004619,"
+753 Central Florida Parkway
+Orlando
+FL
+32824
+",Orlando,FL,32824,Niaflex(Cypress) - Snack Machine,2124,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004620,"
+753 Central Florida Parkway
+Orlando
+FL
+32824
+",Orlando,FL,32824,Niaflex(Cypress) - Pepsi Machine,,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004621,"
+20 West Dicie Avenue
+Eustis
+FL
+32726
+",Eustis,FL,32726,BNY Lake Mary - 2nd Fl Snack Machine,2006,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004623,"Terra Verde Resort
+109 Madiera Beach Boulevard
+Kissimmee
+FL
+34746
+",Kissimmee,FL,34746,Major Center 1 - Snack,2434,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004624,"
+South Apopka Vineland Road & Interstate 4 & Florida 400
+Orlando
+FL
+",Orlando,FL,,Reedy Creek Improvement - Snack Machine,2271,,4,6.92,$4.50 ,$60.50 ,$0.00 ,$65.00 ,$0.24 ,$1.25 ,$0.00 ,$0.00 ,$3.01 
+20004625,"
+7675 Currency Drive
+Orlando
+FL
+32809
+",Orlando,FL,32809,Fed-EX Snack Sand Lake 2041,Fed-Ex Sandlake Warehouse - Snack Machine,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004626,"Bank of NY
+11486 Corporate Boulevard
+Orlando
+FL
+32817
+",Orlando,FL,32817,Bank of NY Rouse 2nd FL Snack,2274,,4,6.13,$4.30 ,$65.85 ,$0.00 ,$70.15 ,$0.24 ,$0.00 ,$0.00 ,$0.00 ,$4.06 
+20004630,"
+22 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,United Ticketing - Snack Machine,2213,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004631,"
+9188 Lake Nona Club Drive
+Orlando
+FL
+32827
+",Orlando,FL,32827,Lake Nona Golf Course - Snack Machine,,,25,48.28,$24.50 ,$26.25 ,$0.00 ,$50.75 ,$1.35 ,$0.00 ,$0.00 ,$0.00 ,$23.15 
+20004651,"""Breakroom
+2000 N alayfa Trail, Suite 150
+Orlando
+FL
+32826
+""",Orlando,FL,32826,Crosslink- Coke Machine,2155,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004652,"American Airlines Ramp Breakroom
+1 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,American Airlines - Snack Machine,2256,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004653,"Lobby
+717 East Oak Street
+Kissimmee
+FL
+34744
+",Kissimmee,FL,34744,Mindful Health - Snack Machine,2225,promo,5,3.47,$5.25 ,$146.00 ,$0.00 ,$151.25 ,$0.27 ,$1.00 ,$0.00 ,$0.00 ,$3.98 
+20004654,"American Airlines Ramp Break Room
+1 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,American Airlines - Pepsi Glass Front Machine,2279,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004655,"
+9901 Ringhaver Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power - Office Pepsi,2023,promo,3,40.31,$3.85 ,$5.70 ,$0.00 ,$9.55 ,$0.21 ,$0.00 ,$0.00 ,$0.00 ,$3.64 
+20004656,"Strayer University Breakroo
+901 N Lake Destiny Rd
+Maitland
+FL
+32751
+",Maitland,FL,32751,Strayer University Maitland - Coke Beverage Machine,2000,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004657,"Coca-Cola Apopka Receiving Office
+2725 W Orange Blossom Trail
+Apopka
+FL
+32712
+",Apopka,FL,32712,Coca-Cola Receiving Office - Snack Machine,2039,promo,3,100,$3.00 ,$0.00 ,$0.00 ,$3.00 ,$0.15 ,$0.00 ,$0.00 ,$0.00 ,$2.85 
+20004658,"Strayer University Breakroom
+901 N Lake Destiny Rd
+Maitland
+FL
+32751
+",Maitland,FL,32751,Strayer University Maitland - Snack Machine,2078,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004659,"900 Central Park Dr
+Sanford
+FL
+",Sanford,FL,,OnSight Signs - Pepsi Beverage Machine,2289,promo,8,27.59,$12.00 ,$31.50 ,$0.00 ,$43.50 ,$0.64 ,$0.00 ,$0.00 ,$0.00 ,$11.36 
+20004660,"
+1823 Business Park Boulevard
+Daytona Beach
+FL
+32114
+",Daytona Beach,FL,32114,Daytona Treatment Center - Lobby Snack Machine,2249,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004661,"
+1823 Business Park Boulevard
+Daytona Beach
+FL
+32114
+",Daytona Beach,FL,32114,Daytona Treatment Center - Beverage Machine,2093,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004662,"
+6545 Corporate Centre Blvd
+Orlando
+FL
+32822
+",Orlando,FL,32822,Old Republic Title - Beverage Machine,2351,promo,2,12.36,$2.75 ,$9.75 ,$9.75 ,$22.25 ,$0.15 ,$0.00 ,$0.00 ,$0.00 ,$2.60 
+20004711,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Teacher's Mail Rm Coke,2166,promo,11,35.48,$13.75 ,$25.00 ,$0.00 ,$38.75 ,$0.77 ,$0.00 ,$0.00 ,$0.00 ,$12.98 
+20004712,"
+925 Florida Central Parkway
+Longwood
+FL
+32750
+",Longwood,FL,32750,Spectra Flooring - Beverage Machine,2162,promo,4,26.56,$8.50 ,$23.50 ,$0.00 ,$32.00 ,$0.47 ,$0.00 ,$0.00 ,$0.00 ,$8.03 
+20004713,"
+7544-7548 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,American Hotel Register - Snack,2100,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004714,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS # 12 Cafeteria Coke,,promo,3,16.67,$1.75 ,$8.75 ,$0.00 ,$10.50 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$1.55 
+20004715,"
+1925 Prospect Avenue
+Orlando
+FL
+32814
+",Orlando,FL,32814,C&P - Snack Machine,,promo,13,23.56,$13.10 ,$42.50 ,$0.00 ,$55.60 ,$0.71 ,$0.00 ,$0.00 ,$0.00 ,$12.39 
+20004716,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS # 2 Pepsi Gym,2135,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004717,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Cafeteria #10 Pepsi,2129,promo,7,42.74,$12.50 ,$16.75 ,$0.00 ,$29.25 ,$0.71 ,$0.00 ,$0.00 ,$0.00 ,$11.79 
+20004718,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS # 9 Cafeteria Pepsi Machine,2182,promo,1,5.88,$1.75 ,$28.00 ,$0.00 ,$29.75 ,$0.07 ,$0.00 ,$0.00 ,$0.00 ,$1.68 
+20004719,"""ProHealth Pharmacy Solutions
+500 Winderley Place, Suite 228
+Maitland
+FL
+32751
+""",Maitland,FL,32751,ProHealth Combo Vending Machine,2081,promo,20,32.09,$17.25 ,$36.50 ,$0.00 ,$53.75 ,$1.02 ,$0.00 ,$0.00 ,$0.00 ,$16.23 
+20004720,"
+440 Fentress Boulevard
+Daytona Beach
+FL
+32114
+",Daytona Beach,FL,32114,Product Quest Fentress - Snack,2305,promo,9,41.18,$8.05 ,$11.50 ,$0.00 ,$19.55 ,$0.42 ,$0.00 ,$0.00 ,$0.00 ,$7.63 
+20004721,"
+5175 West Irlo Bronson Memorial Highway
+Kissimmee
+FL
+34746
+",Kissimmee,FL,34746,Camping World - Snack Machine,2047,promo,1,4.35,$1.00 ,$15.50 ,$6.50 ,$23.00 ,$0.05 ,$0.00 ,$0.00 ,$0.00 ,$0.95 
+20004722,"
+3225 Lockwood Boulevard
+Oviedo
+FL
+32765
+",Oviedo,FL,32765,Hagerty HS Teacher Mail Rm #14 - Snack Machine,2158,promo,3,14.42,$3.75 ,$22.25 ,$0.00 ,$26.00 ,$0.21 ,$0.00 ,$0.00 ,$0.00 ,$3.54 
+20004723,"
+1001 Jetstream Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Old Dominion - Snack Main Breakroom,2086,promo,7,22.91,$8.50 ,$28.60 ,$0.00 ,$37.10 ,$0.46 ,$0.00 ,$0.00 ,$0.00 ,$8.04 
+20004725,"Old Dominion Freight Line
+Longwood
+FL
+32750
+",Longwood,FL,32750,Old Dominion - Trucker Snack,3098,promo,18,54.68,$22.20 ,$18.40 ,$0.00 ,$40.60 ,$1.20 ,$1.10 ,$0.00 ,$0.00 ,$19.90 
+20004726,"
+3550 North Goldenrod Road
+Winter Park
+FL
+32792
+",Winter Park,FL,32792,Threshold - Drink Machine,2022,promo,3,6.1,$3.75 ,$57.75 ,$0.00 ,$61.50 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.55 
+20004727,"
+1001 Jetstream Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Old Dominion - Beverage Main Breakroom,3036,promo,5,43.2,$9.75 ,$12.82 ,$0.00 ,$22.57 ,$0.55 ,$0.00 ,$0.00 ,$0.00 ,$9.20 
+20004728,"
+2500 Maitland Center Parkway
+Maitland
+FL
+32751
+",Maitland,FL,32751,I Heart Media - Snack Machine,3089,promo,7,33.71,$7.50 ,$14.75 ,$0.00 ,$22.25 ,$0.39 ,$0.00 ,$0.00 ,$0.00 ,$7.11 
+20004729,"
+1496 East Buena Vista Dr
+Lake Bunea Vista
+FL
+32830
+",Lake Bunea Vista,FL,32830,Reedy Creek  Garage Snack Machine,3043,promo,58,39.86,$70.25 ,$106.00 ,$0.00 ,$176.25 ,$3.76 ,$1.25 ,$0.00 ,$0.00 ,$65.24 
+20004730,"""GreenspoonMaeder
+201 East Pine St, Suite 500
+Orlando
+FL
+32801
+""",Orlando,FL,32801,GreenspoonMaeder Beverage,3062,promo,1,6.61,$1.50 ,$13.69 ,$7.50 ,$22.69 ,$0.08 ,$0.00 ,$0.00 ,$0.00 ,$1.42 
+20004731,"Northrop Grumman
+Discovery Dr
+Orlando
+FL
+32750
+",Orlando,FL,32750,Northrop Grumman - Pepsi Beverage Machine,4099,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004732,"Fed-Ex Bennet
+1033 Florida 436
+Casselberry
+FL
+32707
+",Casselberry,FL,32707,Fed-Ex Bennet Beverage Machine,2056,promo,1,4.55,$0.75 ,$15.75 ,$0.00 ,$16.50 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20004733,"Fed-Ex Bennett
+950 Bennett Road
+Orlando
+FL
+32803
+",Orlando,FL,32803,Fed-Ex Bennett Snack,2088,,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004734,"
+5175 West Irlo Bronson Memorial Highway
+Kissimmee
+FL
+34746
+",Kissimmee,FL,34746,Camping World - Bev Machine,2277,promo,4,14.29,$4.00 ,$24.00 ,$0.00 ,$28.00 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.80 
+20004903,"Ring Power
+Orlando
+FL
+",Orlando,FL,,Ring Power - Track Shop,2104,promo,16,55.17,$24.00 ,$19.50 ,$0.00 ,$43.50 ,$1.28 ,$0.00 ,$0.00 ,$0.00 ,$22.72 
+20004904,"Ring Power
+Orlando
+FL
+",Orlando,FL,,Ring Power Office Snack,2032,promo,12,14.15,$8.65 ,$52.50 ,$0.00 ,$61.15 ,$0.57 ,$0.00 ,$0.00 ,$0.00 ,$8.08 
+20004905,"
+800 Trafalgar Court
+Maitland
+FL
+32751
+",Maitland,FL,32751,FFVA - Snack Machine,2002,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004906,"Ring Power
+Orlando
+FL
+",Orlando,FL,,Ring Power Rental Office - Pepsi,2147,promo,4,18.18,$6.00 ,$27.00 ,$0.00 ,$33.00 ,$0.32 ,$0.00 ,$0.00 ,$0.00 ,$5.68 
+20004907,"Ring Power
+Orlando
+FL
+",Orlando,FL,,Ring Power Main Breaktoom Pepsi Stacker,2144,promo,7,13.89,$6.60 ,$40.90 ,$0.00 ,$47.50 ,$0.38 ,$0.00 ,$0.00 ,$0.00 ,$6.22 
+20004908,"Hobby Lobby
+711 Centerview Boulevard
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Hobby Lobby - Beverage ,2306,promo,13,31.65,$11.00 ,$23.75 ,$0.00 ,$34.75 ,$0.57 ,$0.00 ,$0.00 ,$0.00 ,$10.43 
+20004909,"
+711 Centerview Boulevard
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Hobby Lobby Snack,2220,promo,3,14.53,$2.60 ,$15.30 ,$0.00 ,$17.90 ,$0.14 ,$0.00 ,$0.00 ,$0.00 ,$2.46 
+20004910,"
+711 Centerview Boulevard
+Kissimmee
+FL
+34741
+",Kissimmee,FL,34741,Mondelez - Snack,2137,promo,1,37.5,$0.75 ,$1.25 ,$0.00 ,$2.00 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20004911,"Ring Power
+FL
+",,FL,,Ring Power Main Breakroom - Snack Machine,2103,promo,14,22.02,$14.60 ,$51.70 ,$0.00 ,$66.30 ,$0.80 ,$0.00 ,$0.00 ,$0.00 ,$13.80 
+20004912,"
+10819-10831 Palmbay Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Ring Power main break room Coke,2107,promo,18,44.26,$27.00 ,$34.00 ,$0.00 ,$61.00 ,$1.44 ,$0.00 ,$0.00 ,$0.00 ,$25.56 
+20004913,"
+400 Technology Park
+Lake Mary
+FL
+32746
+",Lake Mary,FL,32746,Avella - Pepsi Machine,2286,promo,9,33.33,$13.50 ,$27.00 ,$0.00 ,$40.50 ,$0.72 ,$0.00 ,$0.00 ,$0.00 ,$12.78 
+20004914,"
+1000 Mid Florida Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Mondelez - Snack,2133,promo,17,70.83,$25.50 ,$10.50 ,$0.00 ,$36.00 ,$1.36 ,$0.00 ,$0.00 ,$0.00 ,$24.14 
+20004927,"American Hotel Register
+7544-7548 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,American Hotel Register - Snack,2109,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004928,"
+201 East Pine Street
+Orlando
+FL
+32801
+",Orlando,FL,32801,GreenspoonMarder,2084,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004929,"""
+407 Centerpointe Circle, Suite 1679
+Altamonte Springs
+FL
+32701
+""",Altamonte Springs,FL,32701,adcomm - Coke Machine,2384,promo,,,$0.00 ,$1.50 ,$0.00 ,$1.50 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004930,"""Breakroom
+12600 Challenger Parkway, Suite 365
+Orlando
+FL
+32826
+""",Orlando,FL,32826,loyal Source - Snack Machine,2258,promo,5,6.2,$5.75 ,$30.25 ,$56.75 ,$92.75 ,$0.31 ,$1.00 ,$0.00 ,$0.00 ,$4.44 
+20004931,"
+3707 West Colonial Drive
+Orlando
+FL
+32808
+",Orlando,FL,32808,GoCo Glassfront,2110,promo,37,74.19,$57.50 ,$20.00 ,$0.00 ,$77.50 ,$3.19 ,$0.00 ,$0.00 ,$0.00 ,$54.31 
+20004932,"Break Room
+500 Grand Plaza Drive
+Orange City
+FL
+32763
+",Orange City,FL,32763,Brookdale Orange City Soda Machine,2192,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20004933,"L-3 Coleman
+7544-7548 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,L-3 Coleman Snack,2236,promo,29,35.25,$26.70 ,$49.05 ,$0.00 ,$75.75 ,$1.39 ,$0.00 ,$0.00 ,$0.00 ,$25.31 
+20004934,"""Break room
+407 Centerpointe Circle, Suite 1679
+Altamonte Springs
+FL
+32701
+""",Altamonte Springs,FL,32701,adcom - Snack,3039,promo,16,3.2,$18.75 ,$566.75 ,$0.00 ,$585.50 ,$1.02 ,$7.75 ,$0.00 ,$0.00 ,$9.98 
+20004935,"""
+407 Centerpointe Circle, Suite 1679
+Altamonte Springs
+FL
+32701
+""",Altamonte Springs,FL,32701,adcomm - Pepsi Machine,2186,promo,5,2.18,$7.50 ,$76.50 ,$259.25 ,$343.25 ,$0.40 ,$0.00 ,$0.00 ,$0.00 ,$7.10 
+20004936,"CDM
+2301 Maitland Center Pkwy
+Maitland
+FL
+32751
+",Maitland,FL,32751,CDM - 3rd Fl Beverage Machine ,2048,promo,4,33.33,$3.40 ,$6.80 ,$0.00 ,$10.20 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.20 
+20004937,"
+2301 Maitland Center Parkway
+Maitland
+FL
+32751
+",Maitland,FL,32751,CDM - 3rd FL Snack,2012,promo,3,100,$3.00 ,$0.00 ,$0.00 ,$3.00 ,$0.15 ,$0.00 ,$0.00 ,$0.00 ,$2.85 
+20004938,"L-3Coleman
+7544-7548 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,L-3 Coleman Glassfront,2259,promo,22,33.95,$23.00 ,$44.75 ,$0.00 ,$67.75 ,$1.25 ,$0.00 ,$0.00 ,$0.00 ,$21.75 
+20009223,"
+330 Carswell Avenue
+Holly Hill
+FL
+32117
+",Holly Hill,FL,32117,Product Quest - Snack Machine end,2171,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009224,"331 Carswell Ave
+Daytona Beach
+32117
+",Daytona Beach,32117,,Product Quest - Snack,2059,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009225,"2725 S US Highway 17 92
+Casselberry
+32708
+",Casselberry,32708,,Aviation Institute - Cold Food Machine,3037,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009226,"2725 U.S. 92
+Casselberry
+32707
+",Casselberry,32707,,Aviation Institute Soda Can Machine ,2015,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009227,"Ticket Counter Breakroom
+1 Jeff Fuqua Boulevard
+Orlando
+FL
+32827
+",Orlando,FL,32827,United Ticketing - GlassFront Drink Machine,2278,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009228,"
+201 East Pine Street
+Orlando
+FL
+32801
+",Orlando,FL,32801,GreenspoonMarder - Snack Machine,2084,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009229,"331 Carswell Ave
+Daytona Beach
+32117
+",Daytona Beach,32117,,Product Quest - Cold Food,2167,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009230,"330-344 Carswell Ave
+Holly Hill
+32117
+",Holly Hill,32117,,Product Quest Pepsi Stacker - 99,2115,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009231,"330 Carswell Ave
+Holly Hill
+32117
+",Holly Hill,32117,,Product Quest Generic Soda # 66,2436,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009232,"330-344 Carswell Ave
+Holly Hill
+32117
+",Holly Hill,32117,,Product Quest Coke # 55,2300,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009233,"Break Room
+301 Gills Dr
+Orlando
+FL
+32819
+",Orlando,FL,32819,Kelly Nissan - Snack Machine ,2191,promo,14,42.18,$11.60 ,$15.90 ,$0.00 ,$27.50 ,$0.65 ,$0.00 ,$0.00 ,$0.00 ,$10.95 
+20009234,"2725 S US Highway 17 92
+Casselberry
+32707
+",Casselberry,32707,,Aviation Institute Water Machine ,2101,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009235,"2499 Mercy Dr
+Orlando
+32808
+",Orlando,32808,,Hajoka - Snack Machine,2429,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009236,"4110 W Colonial Dr
+Orlando
+32808
+",Orlando,32808,,Hyundai Orlando - Ice Cream ,2035,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009237,"""Crosslink Tax
+2000 N. Alafaya Trail, Suite 150
+Orlando
+FL
+32826
+""",Orlando,FL,32826,Crosslink - Snack Machine,2019,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009238,"
+12180 East Colonial Drive
+Orlando
+FL
+32807
+",Orlando,FL,32807,Mister Car Wash # 3 -  Snack Vending Machine,2322,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009239,"4110 W. Colonial Dr
+Orlando
+FL
+32808
+",Orlando,FL,32808,Hyundai Orlando - Snack Machine,2080,promo,10,7.48,$11.75 ,$99.00 ,$46.25 ,$157.00 ,$0.64 ,$0.00 ,$0.00 ,$0.00 ,$11.11 
+20009240,"Herzing University
+Orlando
+FL
+32817
+",Orlando,FL,32817,Herzing Soda Machine,2071,promo,4,8.88,$7.75 ,$79.50 ,$0.00 ,$87.25 ,$0.43 ,$2.00 ,$0.00 ,$0.00 ,$5.32 
+20009241,"2499 Mercy Dr
+Orlando
+32808
+",Orlando,32808,,Hajoka Beverage Machine ,2406,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009242,"11486 Corporate Blvd
+Orlando
+FL
+",Orlando,FL,,Bank of NY Rouse 3rd Fl - Beverage Machine,2239,promo,7,25.93,$5.25 ,$15.00 ,$0.00 ,$20.25 ,$0.28 ,$1.50 ,$0.00 ,$0.00 ,$3.47 
+20009243,"440 Fentress Blvd
+Daytona Beach
+32114
+",Daytona Beach,32114,,Product Quess Fentress - Pepsi Machine,2107,promo,7,53.85,$10.50 ,$9.00 ,$0.00 ,$19.50 ,$0.56 ,$0.00 ,$0.00 ,$0.00 ,$9.94 
+20009244,"
+451 Monroe Road
+Sanford
+FL
+32771
+",Sanford,FL,32771,FedEx Sanford - Snack Machine,2387,promo,19,21.12,$17.95 ,$67.05 ,$0.00 ,$85.00 ,$0.92 ,$2.00 ,$0.00 ,$0.00 ,$15.03 
+20009245,"2500 Maitland Center Pkwy
+Maitland
+FL
+",Maitland,FL,,Colonial Management Group - Beverage Machine,2345,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009246,"
+4110 West Colonial Drive
+Orlando
+FL
+32808
+",Orlando,FL,32808,Hyundai - Soda Machine,2072,promo,19,15.82,$14.75 ,$78.50 ,$0.00 ,$93.25 ,$0.79 ,$0.00 ,$0.00 ,$0.00 ,$13.96 
+20009247,"2725 U.S. 92
+Casselberry
+32707
+",Casselberry,32707,,Aviation Institute - Glass Front Beverage ,2070,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009248,"1927-2031 Rinehart Rd
+Sanford
+FL
+",Sanford,FL,,Mister Car Wash # 2- Snack Machine,2111,promo,1,3.64,$1.00 ,$26.50 ,$0.00 ,$27.50 ,$0.05 ,$0.00 ,$0.00 ,$0.00 ,$0.95 
+20009249,"5750 Major Blvd
+Orlando
+32819
+",Orlando,32819,,Major Center Plaza 2 - Snack Machine,2175,promo,7,29.79,$7.15 ,$16.85 ,$0.00 ,$24.00 ,$0.38 ,$0.00 ,$0.00 ,$0.00 ,$6.77 
+20009250,"650 Douglas Ave
+Altamonte Springs
+32714
+",Altamonte Springs,32714,,Jeunesse Global - Coke Beverage Machine,2130,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009251,"2725 S US Highway 17 92
+Casselberry
+32708
+",Casselberry,32708,,Aviation Institute - 4-W Snack Machine,2025,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009252,"3720 Lake Emma Rd
+Lake Mary
+FL
+",Lake Mary,FL,,Mister Car Wash # 1 - Snack Machine,2265,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009253,"4211-4311 Shader Rd
+Orlando
+32808
+",Orlando,32808,,Tech Packaging - Pepsi,2337,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009254,"4211-4311 Shader Rd
+Orlando
+32808
+",Orlando,32808,,Tech Packaging - Snack Machine,2033,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009255,"2725 U.S. 92
+Casselberry
+32707
+",Casselberry,32707,,Aviation Institute 5W Snack Machine ,2079,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009256,"3024 Shader Rd
+Orlando
+32808
+",Orlando,32808,,Industrial Smoke - Snack Machine ,2001,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009257,"4211-4311 Shader Rd
+Orlando
+32808
+",Orlando,32808,,Tech Packaging - Cold Food,2497,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009258,"220 E Central Pkwy
+Altamonte Springs
+32701
+",Altamonte Springs,32701,,Center Pointe Two - Beverage Machine,2243,promo,10,22.58,$10.50 ,$36.00 ,$0.00 ,$46.50 ,$0.53 ,$0.00 ,$0.00 ,$0.00 ,$9.97 
+20009259,"5728 Major Blvd
+Orlando
+32819
+",Orlando,32819,,Major Center One - Beverage Machine,2069,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009260,"5750 Major Blvd
+Orlando
+32819
+",Orlando,32819,,Major Center Plaza 2 - Drink Machine,2067,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009261,"301 Gills Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,Kelly Nissan - Beverage Machine ,2257,promo,16,21.45,$14.75 ,$54.00 ,$0.00 ,$68.75 ,$0.79 ,$0.00 ,$0.00 ,$0.00 ,$13.96 
+20009262,"Small Break Room
+7675 Municipal Drive
+Orlando
+FL
+32819
+",Orlando,FL,32819,L-3 Coleman - Small Break Room Soda,2261,promo,5,7.46,$3.75 ,$46.50 ,$0.00 ,$50.25 ,$0.20 ,$0.00 ,$0.00 ,$0.00 ,$3.55 
+20009263,"451 Monroe Rd
+Sanford
+32771
+",Sanford,32771,,FedEx Sanford - Pepsi Beverage Machine,2451,promo,18,27.73,$33.00 ,$86.00 ,$0.00 ,$119.00 ,$1.80 ,$0.00 ,$0.00 ,$0.00 ,$31.20 
+20009264,"
+3707 West Colonial Drive
+Orlando
+FL
+32808
+",Orlando,FL,32808,GoCo - Snack,2156,promo,21,60.8,$23.50 ,$15.15 ,$0.00 ,$38.65 ,$1.30 ,$1.75 ,$0.00 ,$0.00 ,$20.45 
+20009265,"6545 Corporate Centre Blvd
+Orlando
+FL
+32822
+",Orlando,FL,32822,Old republic National Title -  Snack Machine,2116,promo,7,5.12,$6.75 ,$87.25 ,$37.75 ,$131.75 ,$0.35 ,$0.00 ,$0.00 ,$0.00 ,$6.40 
+20009266,"12612 Challenger Parkway
+Suite 365
+Orlando
+FL
+32826
+",Orlando,FL,32826,Loyal Source - Coke Stacker,2150,promo,4,2.93,$3.00 ,$27.00 ,$72.50 ,$102.50 ,$0.24 ,$0.00 ,$0.00 ,$0.00 ,$2.76 
+20009267,"2101 Park Center Dr
+Orlando
+FL
+32835
+",Orlando,FL,32835,Telespeak - Cold Food Machine,2185,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009268,"""Northrop Grumman
+2721 Discovery Dr, Suite 100
+Orlando
+FL
+32826
+""",Orlando,FL,32826,Northrop Grumman - Snack Machine,2018,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009269,"""
+2721 Discovery Drive, Suite 100
+Orlando
+FL
+32826
+""",Orlando,FL,32826,Northrop Grumman -  Soda Machine,2177,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009270,"Breakroom
+9080 Boggy Creek Road
+Orlando
+FL
+32824
+",Orlando,FL,32824,MWI Snack Machine,2361,promo,25,39.26,$26.15 ,$40.45 ,$0.00 ,$66.60 ,$1.38 ,$2.20 ,$0.00 ,$0.00 ,$22.57 
+20009271,"921 Douglas Ave
+Altamonte Springs
+FL
+",Altamonte Springs,FL,,The Mortgage Firm - Coke Beverage Machine,N/A,promo,25,43.55,$32.75 ,$42.45 ,$0.00 ,$75.20 ,$1.87 ,$0.00 ,$0.00 ,$0.00 ,$30.88 
+20009272,"8394 Bear Rd
+Orlando
+32827
+",Orlando,32827,,ASIG Office - Beverage Machine,2343,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009273,"6375 S Semoran Blvd
+Orlando
+32822
+",Orlando,32822,,ADT Breakroom - Snack Machine,2298,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009274,"I heart Media
+2600 Maitland Center Parkway
+Maitland
+FL
+32746
+",Maitland,FL,32746,I Heart Media 3rd Fl Pepsi Machine,3055,promo,2,18.18,$3.00 ,$13.50 ,$0.00 ,$16.50 ,$0.16 ,$0.00 ,$0.00 ,$0.00 ,$2.84 
+20009275,"9200 Lake Nona Club Drive
+Orlando
+32827
+",Orlando,32827,,Lake Nona Golf Course Break Room -  Pepsi Beverage,2277,promo,42,56.93,$48.25 ,$36.50 ,$0.00 ,$84.75 ,$2.70 ,$0.00 ,$0.00 ,$0.00 ,$45.55 
+20009276,"
+1865 Florida 436
+Winter Park
+FL
+32792
+",Winter Park,FL,32792,Herzing - Snack Upstairs,2493,promo,9,100,$11.00 ,$0.00 ,$0.00 ,$11.00 ,$0.61 ,$0.00 ,$0.00 ,$0.00 ,$10.39 
+20009277,"Break Room
+1900 Hotel Plaza Boulevard
+Lake Buena Vista
+FL
+32830
+",Lake Buena Vista,FL,32830,Reedy Creek - Pepsi Beverage Machine,2282,promo,1,4.76,$0.75 ,$15.00 ,$0.00 ,$15.75 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20009278,"
+13295 Flamingo Crossings Boulevard
+Winter Garden
+FL
+34787
+",Winter Garden,FL,34787,TownPlace Suites - Pepsi Beverage Machine,2194,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009279,"I heart Media
+Maitland
+FL
+32746
+",Maitland,FL,32746,I heart Media 4th Fl Coke,none,promo,14,38.62,$28.00 ,$44.50 ,$0.00 ,$72.50 ,$1.54 ,$0.00 ,$0.00 ,$0.00 ,$26.46 
+20009280,"Game Room
+109 Madiera Beach Boulevard
+Kissimmee
+FL
+34746
+",Kissimmee,FL,34746,Terra Verde - Coke Beverage Machine,2164,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009281,"
+13279 Flamingo Crossings Boulevard
+Winter Garden
+FL
+34787
+",Winter Garden,FL,34787,SpringHill Suites - Snack Machine,2242,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009282,"1023 W Central Pkwy
+Altamonte Springs
+FL
+",Altamonte Springs,FL,,Jeunesse Global - Snack Machine,2183,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009283,"Avella Healthcare
+400 Technology Park
+Lake Mary
+FL
+32746
+",Lake Mary,FL,32746,Avella - Snack Machine,2284,promo,12,55,$13.75 ,$11.25 ,$0.00 ,$25.00 ,$0.74 ,$0.00 ,$0.00 ,$0.00 ,$13.01 
+20009284,"Colonial Grand Ln
+Lake Mary
+FL
+",Lake Mary,FL,,Pershing - Soda Machine ,2082,promo,1,16.67,$0.75 ,$3.75 ,$0.00 ,$4.50 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20009285,"
+269 Hunt Park Cove
+Longwood
+FL
+32750
+",Longwood,FL,32750,Legendary Athletics - Glass Front Pepsi Beverage Machine,2092,promo,3,7.32,$5.25 ,$55.75 ,$10.75 ,$71.75 ,$0.30 ,$0.00 ,$0.00 ,$0.00 ,$4.95 
+20009286,"Truckers Lounge
+1001 Jetstream Drive
+Orlando
+FL
+32824
+",Orlando,FL,32824,Old Dominion - Pepsi Truckers Lounge,2114,promo,23,71.54,$45.25 ,$18.00 ,$0.00 ,$63.25 ,$2.55 ,$0.00 ,$0.00 ,$0.00 ,$42.70 
+20009287,"3851 Express St
+Orlando
+32827
+",Orlando,32827,,E-Z Rent A Car Breakroom - Snack Machine,2251,promo,9,100,$9.30 ,$0.00 ,$0.00 ,$9.30 ,$0.49 ,$2.00 ,$0.00 ,$0.00 ,$6.81 
+20009288,"3851 Express St
+Orlando
+32827
+",Orlando,32827,,E-Z Car Rental Breakroom - Pepsi Beverage Machine,2233,promo,2,4.35,$1.50 ,$33.00 ,$0.00 ,$34.50 ,$0.08 ,$0.00 ,$0.00 ,$0.00 ,$1.42 
+20009289,"1469-1547 Tradeport Dr
+Orlando
+32824
+",Orlando,32824,,Penser Breakroom - Pepsi Beverage Machine,2348,promo,7,12.56,$6.75 ,$47.00 ,$0.00 ,$53.75 ,$0.36 ,$0.00 ,$0.00 ,$0.00 ,$6.39 
+20009290,"
+4001-4099 McNeil Road
+Forest City
+FL
+32714
+",Forest City,FL,32714,Teague Middle School - Beverage Machine,,,1,16.67,$0.75 ,$3.75 ,$0.00 ,$4.50 ,$0.04 ,$0.00 ,$0.00 ,$0.00 ,$0.71 
+20009291,"
+269 Hunt Park Cove
+Longwood
+FL
+32750
+",Longwood,FL,32750,Legendary Athletics - Snack Machine ,2077,promo,1,6.76,$1.25 ,$17.25 ,$0.00 ,$18.50 ,$0.07 ,$0.00 ,$0.00 ,$0.00 ,$1.18 
+20009292,"
+8900 South US Highway 17 92
+Maitland
+FL
+32751
+",Maitland,FL,32751,Orlando Car Deals - Coke Machine,2197,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009293,"
+8900 South US Highway 17 92
+Maitland
+FL
+32751
+",Maitland,FL,32751,Orlando Car Deals - Snack Machine,2218,promo,,,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 ,$0.00 
+20009294,"
+925 Florida Central Parkway
+Longwood
+FL
+32750
+",Longwood,FL,32750,Spectra Flooring - Snack Machine,2143,promo,4,21.52,$4.25 ,$15.50 ,$0.00 ,$19.75 ,$0.23 ,$0.00 ,$0.00 ,$0.00 ,$4.02 
