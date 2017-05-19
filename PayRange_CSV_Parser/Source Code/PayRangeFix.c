@@ -38,7 +38,7 @@
                 common <string.h> standard library experiences. More specifically
                 I make use of it to avoid skipping tokens with no values
                 (like strtok()) currently does. This allows me to account
-                for columns that are blank.
+                for columns that are blank/empty.
 
 */
 //Header & Library File(s)
@@ -89,21 +89,23 @@ int col_feeAmt;
 int col_netAmt;
 int totalColumns;
 
-struct row* head;
+struct row* head;//Head of the Linked List
 int totalNodes = 1;
 
 //Function Declaration(s)/Prototype(s)
+void run(void);
 void verifyFileName(void);
 void parseHeaders(void);
 struct row* parsePayRangeFile(void);
-void sortLinkedList(int);
+void alternativeSort(void);
 void writePayRangeFile(void);
+
 void showHead(void);//used to debug
 void showNode(struct row*);//used to debug
 void showList(void);//used to debug
-void countPause(int);
-void alternativeSort(void);
-char* parseToken(char*);
+void countPause(int);//used to debug
+
+char* concat(const char*, const char*);
 bool isLetter(char);
 bool isNextMatch(char [MAX_STRING_LEN], char [MAX_STRING_LEN]);
 bool moneyExists(char [MAX_STRING_LEN]);
@@ -116,8 +118,28 @@ int main(int argc, char *argv[])
     // NOTE ARGC = Argument Count && Argv = Argument Vector
     //filename = *argv[0];
 
-    strcpy(filename, "This_Week_OriginalPayRange.csv");
+    strcpy(filename, "PayRange417to423");
+    run();
+    system("pause");
 
+    strcpy(filename, "PayRange424to430");
+    run();
+    system("pause");
+
+    strcpy(filename, "PayRange51to57");
+    run();
+    system("pause");
+
+    strcpy(filename, "PayRange58to514");
+    run();
+    system("pause");
+
+    return;
+}//END main
+
+//Function(s)
+void run()
+{
     printf("Verifying File Exists...\n");
     verifyFileName();
 
@@ -130,118 +152,108 @@ int main(int argc, char *argv[])
     printf("Sorting File Now...\n");
     alternativeSort();
 
-    printf("\nCreating New File...\n");
+    printf("Creating New File...\n");
     writePayRangeFile();
-
 
     printf("Completed! Check new file and rename it!\n");
 
     return;
-}//END main
+}
 
-//Function(s)
 void verifyFileName()
 {
     //Local Variable(s)
-    int tmp = NOTVERIFIED;
-    char tempString[MAX_STRING_LEN];
+    int flag = NOTVERIFIED;
+    char str[MAX_STRING_LEN];
+    FILE* stream;
+    char *s;
 
-    while(tmp == NOTVERIFIED)
+    while(flag == NOTVERIFIED)
     {
-        FILE* stream = fopen(filename, "r"); //Attempt to Open File
+        s = concat(filename, ".csv");
+        stream = fopen(s, "r"); //Attempt to Open File
 
         if(stream == NULL) //If failed to open file
         {
             fclose(stream); //Close the file
 
-            printf("Error: File failing to open, verify the name is correct and try again: ");
-            scanf("%s", &tempString); //Ask for correct filename && try again
-            strcpy(filename, tempString);
+            printf("Error: File failing to open.\nPlease verify the name is correct and try again: ");
+            scanf("%s", &str); //Ask for correct filename && try again
+            strcpy(filename, str);
             printf("\n");
         }
         else
         {
             printf("File Found...\n");
             fclose(stream); //Close the file
-            tmp = VERIFIED;
+            flag = VERIFIED;
         }
     }
 
     return;
 }//END verifyFileName
 
-void parseHeaders() //FGETS STOPS AT (N-) are read or newline char, or EOF,        return;   whichever comes first
+void parseHeaders()
 {
     //Local Variable(s)
-    char tempString[MAX_CSV_LEN];
-    char *token;
+    char str[MAX_CSV_LEN];
+    char *token, *s;
     FILE* stream;
     int count = 0;
 
-    stream = fopen(filename, "r"); //Open File
-    fgets(tempString, MAX_CSV_LEN, stream); //Get First Line (column headers)
+    s = concat(filename, ".csv");
+    stream = fopen(s, "r"); //Open File
+    fgets(str, MAX_CSV_LEN, stream); //Get First Line (column headers)
 
-    token = strtok(tempString, comma); //Grab First Token from First Line String (delimited by commas)
+    token = strtok(str, comma); //Grab First Token from First Line String (delimited by commas)
 
     while(token != NULL) //while there are tokens remaining
     {
         count++;
 
-        //printf("\nThis is Token %d: %s",count, token);
-
         if(strcmp(token, dName) == 0)
         {
-            col_dName = count; //set desired col location
+            col_dName = count; //retain col # of dName header
         }
         else if(strcmp(token, mobileAmt) == 0)
         {
-            col_mobileAmt = count; //set desired col location
+            col_mobileAmt = count; //retain col # of mobileAmt header
         }
         else if(strcmp(token, discountAmt) == 0)
         {
-            col_discountAmt = count; //set desired col location
+            col_discountAmt = count; //retain col # of discountAmt header
         }
         else if(strcmp(token, feeAmt) == 0)
         {
-            col_feeAmt = count; //set desired col location
+            col_feeAmt = count; //retain col # of feeAmt header
         }
         else if(strcmp(token, netAmt) == 0)
         {
-            col_netAmt = count; //set desired col location
+            col_netAmt = count; //retain col # of netAmt header
         }
 
         token = strtok(NULL, comma); //get next token
     }
 
-    totalColumns = count;
+    totalColumns = count;//Retain total amount of columns seen in the file
 
-    //TEST CODE
-    /*
-    printf("\nDisplay Name is Column: %d.", col_dName); //
-    printf("\nMobile Amt is Column: %d.", col_mobileAmt); //
-    printf("\nDiscount Amt is Column: %d.", col_discountAmt); //
-    printf("\nFee Amt is Column: %d.", col_feeAmt); //
-    printf("\nNet Amt is Column: %d.", col_netAmt); //
-    printf("\nThere are %d total columns!\n", totalColumns); //
-    */
     fclose(stream); //Close File
-
 
     return;
 }//END parseHeaders
 
 struct row* parsePayRangeFile()
 {
-
     //Local Variable(s)
     char tempString[MAX_CSV_LEN];
-    char *token;
+    char *token, *s;
     FILE* stream;
-    int count = 2;
-    int firstNode = NOTVERIFIED;
+    int count = 2;//Once we grab a line with data we're interested in, we'll actually be in column two (based on csv file format)
+    int seenFirstNode = NOTVERIFIED;
     struct row* temp = (row*)malloc(sizeof(struct row));
 
-    stream = fopen(filename, "r"); //Open File
+    s = concat(filename,".csv");
+    stream = fopen(s, "r"); //Open File
     fgets(tempString, MAX_CSV_LEN, stream); //Get First Line (discard, do not need as it is only headers)
 
     while(fgets(tempString, MAX_CSV_LEN, stream) != NULL)//while there are lines left to read, get one.
@@ -251,7 +263,7 @@ struct row* parsePayRangeFile()
             fgets(tempString, MAX_CSV_LEN, stream); //skip this line, not what we're looking for
         }
 
-        if(firstNode == VERIFIED && totalNodes > 2)
+        if(seenFirstNode == VERIFIED && totalNodes > 2)
         {
             temp->next = (row*)malloc(sizeof(row)); // allocation memory for next row
             temp = temp->next; //move temp to next row
@@ -262,7 +274,6 @@ struct row* parsePayRangeFile()
         {
             if(col_dName == count)
             {
-                token = parseToken(token);
                 strcpy(temp->dName, token);
             }
             else if(col_mobileAmt == count)
@@ -282,9 +293,9 @@ struct row* parsePayRangeFile()
                 strcpy(temp->netAmt, token);
             }
 
-            if(count == totalColumns)//found last item for this node, reset counter
+            if(count == totalColumns)//found last item for this node
             {
-                if(firstNode == NOTVERIFIED)
+                if(seenFirstNode == NOTVERIFIED)
                 {
                     head = (row*)malloc(sizeof(struct row));
 
@@ -294,18 +305,21 @@ struct row* parsePayRangeFile()
                     strcpy(head->feeAmt, temp->feeAmt);
                     strcpy(head->netAmt, temp->netAmt);
 
+                    //Change the String: '$x.xx' to a float value, used when writing new csv file
                     head->totalAmt = strToFloat(head->mobileAmt,head->discountAmt);
-                    firstNode = VERIFIED;
-                    head->next = temp;
+
+                    seenFirstNode = VERIFIED;
+                    head->next = temp;//link next node to the head of the list
                 }
                 else
                 {
+                    //Change the String: '$x.xx' to a float value, used when writing new csv file
                     temp->totalAmt = strToFloat(temp->mobileAmt,temp->discountAmt);
                 }
 
                 count = 2; //reset counter
-                token = NULL;
-                totalNodes++;
+                token = NULL;//reset our token
+                totalNodes++;//increment our totalNodes(total rows) counter
             }
             else
             {
@@ -314,94 +328,42 @@ struct row* parsePayRangeFile()
             }
         }
     }
-    return;
 
+    return;
 }//End parsePayRangeFile
 
-char* parseToken(char* token)
-{
-    //Local Variable(s)
-    int length = strlen(token);//Length of the Token
-    int prevChar, currChar; //ASCII Value of the previous and current characters
-    bool prevCharIsLetter, currCharIsLetter; //flag to denote the prev and curr char is a letter
-    int i;
-
-    token[0] = toupper(token[0]);//Capitalize First Letter
-
-    for(i=1; i<length; i++)
-    {
-        prevCharIsLetter = isLetter(token[i-1]);
-        currCharIsLetter = isLetter(token[i]);
-
-        if(prevCharIsLetter && currCharIsLetter)//Both are Letters
-        {
-            token[i] = tolower(token[i]);
-        }
-        else if(prevCharIsLetter && (!currCharIsLetter))//Prev is Letter, Curr is not
-        {
-            //do nothing
-        }
-        else if((!prevCharIsLetter) && currCharIsLetter)//Curr is Letter, Prev is not
-        {
-            token[i] = toupper(token[i]);
-        }
-        else//Both are non-letters
-        {
-            //do nothing
-        }
-    }
-    return token;
-}//END parseToken
-
-bool isLetter(char ch)
+void alternativeSort()
 {
     /*
-       ASCII
-       65(A) to 90(Z)
-       97(a) to 122(z)
-       (difference of 32)
-    */
-        if((64 < ch) && (ch < 91))//lowercase
-        {
-            return true;
-        }
-        else if((96 < ch) && (ch < 123))//uppercase
-        {
-            return true;
-        }
-        else//not a char
-        {
-            return false;
-        }
-}//END isLetter
+    strcmp(s1,s2)
 
-void sortLinkedList(int i)
-{
+    strcmp returns neg int if stop char in s1 was LESS than in s2 (s1 < s2) s1 stopping char was closer to a than s2
+           returns pos int if stop char in s1 was MORE than in s2 (s1 > s2) s2 stopping char was closer to a then s1
+           returns 0 if equal
+
+           ASCII
+           65(A) to 90(Z)
+           97(a) to 122(z)
+           (difference of 32)
+    */
+
     //Local Variable(s)
     struct row* temp;      //Used to avoid chance of losing HEAD
     struct row* prevHold;  //Used to retain location of the previous node to use during swapping
     struct row* hold;      //Used to store data that needs to be saved when swapping
-    char strCurr[MAX_STRING_LEN]; //Curr Node dName
-    char strNext[MAX_STRING_LEN]; //Next Node dName
-    int firstRow = NOTVERIFIED;   //Starting Node Flag
     bool swapOccured = true;
     bool beginFlag;
-    int n = 0;
 
-    while(swapOccured == true)
+    while(swapOccured == true)//while a swap was made in the prev iteration
     {
-        printf("\nSort #: (%d)",++n);
         beginFlag = true;
-        swapOccured = false; //Used to indicate if we're done sorting. If we do not make a swap, we're done
-        temp = head; //Use TEMP instead of HEAD to minimize chance of losing the list
+        swapOccured = false;
+        temp = head;
 
-        while(temp->next != NULL) //While not at end of list
+        while(temp->next != NULL) //while not at end of list
         {
-            strcpy(strCurr, temp->dName); //this nodes Display
-            strcpy(strNext, temp->next->dName); //next nodes Display Name
-
             //Case 1: Swap Needed
-            if(strCurr[i] > strNext[i])
+            if((strcmp(temp->dName,temp->next->dName)) > 0)
             {
                 if(beginFlag == true)//Case 1: Head of List
                 {
@@ -432,130 +394,27 @@ void sortLinkedList(int i)
             //Case 2: Swap NOT Needed
             else
             {
-                prevHold = temp;//Retain location of prev node
+                prevHold = temp;
                 temp = temp->next;//Go to next node
                 beginFlag = false; //Set head of list flag
             }
         }
     }
+
     return;
-}//END sortLinkedList
-
-void showHead()
-{
-    printf("\nHead Node: \n");
-    printf("\nDisplay Name: (%s)", head->dName);
-    printf("\nMobile Amt: (%s)", head->mobileAmt);
-    printf("\nDiscount Amt: (%s)", head->discountAmt);
-    printf("\nFee Amt: (%s)", head->feeAmt);
-    printf("\nNet Amt: (%s)", head->netAmt);
-    return;
-}//END showHead
-
-void showNode(struct row* node)
-{
-    printf("\nNode Information: \n");
-    printf("\nDisplay Name: (%s)", node->dName);
-    printf("\nMobile Amt: (%s)", node->mobileAmt);
-    printf("\nDiscount Amt: (%s)", node->discountAmt);
-    printf("\nFee Amt: (%s)", node->feeAmt);
-    printf("\nNet Amt: (%s)\n", node->netAmt);
-    return;
-}//END showNode
-
-float strToFloat(char mobileAmt[MAX_STRING_LEN],char discountAmt[MAX_STRING_LEN])
-{
-    float returnNet = 0.00;
-    float amt;
-    int i, j;
-    int length = strlen(mobileAmt);
-
-    /*
-        mobileAmt in form:   '$0.00'
-        discountAmt in form: '40.00'
-    */
-
-    //Determine where the '.' is:
-    for(i = 0; i < length; i++)//loop through string
-    {
-        if(mobileAmt[i] == '.')//once we find our decimal marker
-        {
-            //Get & Add Hundredths Place
-            amt = mobileAmt[i+2] - '0';
-            returnNet += 0.01*amt;
-
-            //Get & Add Tenths Place
-            amt = mobileAmt[i+1] - '0';
-            returnNet += 0.1*amt;
-
-            //Get & Add Ones Place
-            amt = mobileAmt[i-1] - '0';
-            returnNet += 1.0*amt;
-
-            if(i == 3)
-            {
-                //Get & Add Tens Place IF IT EXISTS
-                amt = mobileAmt[i-2] - '0';
-                returnNet += 10.0*amt;
-            }
-
-            if(i == 4)
-            {
-                //Get & Add Hundreds Place IF IT EXISTS
-                amt = mobileAmt[i-3] - '0';
-                returnNet += 100.0*amt;
-            }
-        }
-    }
-
-    //Repeat same process for discountAmt
-    length = strlen(discountAmt);
-
-    //Determine where the '.' is:
-    for(i = 0; i < length; i++)//loop through string
-    {
-        if(discountAmt[i] == '.')//once we find our decimal marker
-        {
-            //Get & Sub Hundredths Place
-            amt = discountAmt[i+2] - '0';
-            returnNet -= 0.01*amt;
-
-            //Get & Sub Tenths Place
-            amt = discountAmt[i+1] - '0';
-            returnNet -= 0.1*amt;
-
-            //Get & Sub Ones Place
-            amt = discountAmt[i-1] - '0';
-            returnNet -= 1.0*amt;
-
-            if(i == 3)
-            {
-                //Get & Sub Tens Place IF IT EXISTS
-                amt = discountAmt[i-2] - '0';
-                returnNet -= 10.0*amt;
-            }
-
-            if(i == 4)
-            {
-                //Get & Sub Hundreds Place IF IT EXISTS
-                amt = discountAmt[i-3] - '0';
-                returnNet -= 100.0*amt;
-            }
-        }
-    }
-
-    return returnNet;
-}//END strToInt
+}
 
 void writePayRangeFile()
 {
+    showList();
     //Local Variable(s)
     FILE* stream;
     int flag = NOTVERIFIED;   //flag for end of list
     struct row* temp = head;  //temp used to avoid loss of head pointer
     float totalAmt= 0.00;     //used to store total amounts between nodes of the same account
+    char* s = concat(filename, "_parsed.csv");
 
-    stream = fopen("parsed_payrange_file.csv", "w"); //Open a new file to write proper data into
+    stream = fopen(s, "w"); //Open a new file to write proper data into
 
     //PRINT HEADERS INTO FILE
     fprintf(stream, "Display Name"); fprintf(stream, ",");
@@ -612,7 +471,7 @@ void writePayRangeFile()
             }
         }
 
-        if(temp->next == NULL)
+        if(temp->next->next == NULL)// if we're here ||| ->||| -> NULL
         {
             flag = VERIFIED; //We're at the end of list, using temp so we dont use head of list location
             system("pause");
@@ -627,9 +486,94 @@ void writePayRangeFile()
     fprintf(stream, "\n");
     fprintf(stream, "Totals:");
     fclose(stream);
+    free(s);
     return;
 
 }//END writePayRangeFile
+
+float strToFloat(char mobileAmt[MAX_STRING_LEN],char discountAmt[MAX_STRING_LEN])
+{
+    float net = 0.00;
+    float amt;
+    int i, j;
+    int length = strlen(mobileAmt);
+
+    /*
+        mobileAmt in form:   '$0.00'
+        discountAmt in form: '$0.00'
+    */
+
+    //Determine where the '.' is:
+    for(i = 0; i < length; i++)//loop through string
+    {
+        if(mobileAmt[i] == '.')//once we find our decimal marker
+        {
+            //Get & Add Hundredths Place
+            amt = mobileAmt[i+2] - '0';
+            net += 0.01*amt;
+
+            //Get & Add Tenths Place
+            amt = mobileAmt[i+1] - '0';
+            net += 0.1*amt;
+
+            //Get & Add Ones Place
+            amt = mobileAmt[i-1] - '0';
+            net += 1.0*amt;
+
+            if(i == 3)
+            {
+                //Get & Add Tens Place IF IT EXISTS
+                amt = mobileAmt[i-2] - '0';
+                net += 10.0*amt;
+            }
+
+            if(i == 4)
+            {
+                //Get & Add Hundreds Place IF IT EXISTS
+                amt = mobileAmt[i-3] - '0';
+                net += 100.0*amt;
+            }
+        }
+    }
+
+    //Repeat same process for discountAmt
+    length = strlen(discountAmt);
+
+    //Determine where the '.' is:
+    for(i = 0; i < length; i++)//loop through string
+    {
+        if(discountAmt[i] == '.')//once we find our decimal marker
+        {
+            //Get & Sub Hundredths Place
+            amt = discountAmt[i+2] - '0';
+            net -= 0.01*amt;
+
+            //Get & Sub Tenths Place
+            amt = discountAmt[i+1] - '0';
+            net -= 0.1*amt;
+
+            //Get & Sub Ones Place
+            amt = discountAmt[i-1] - '0';
+            net -= 1.0*amt;
+
+            if(i == 3)
+            {
+                //Get & Sub Tens Place IF IT EXISTS
+                amt = discountAmt[i-2] - '0';
+                net -= 10.0*amt;
+            }
+
+            if(i == 4)
+            {
+                //Get & Sub Hundreds Place IF IT EXISTS
+                amt = discountAmt[i-3] - '0';
+                net -= 100.0*amt;
+            }
+        }
+    }
+
+    return net;
+}//END strToInt
 
 char* removeNewLine(char netAmt[MAX_STRING_LEN])
 {
@@ -646,41 +590,89 @@ char* removeNewLine(char netAmt[MAX_STRING_LEN])
     }
 }//END removeNewLine
 
+char* concat(const char *s1, const char *s2)
+{
+    char *result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the zero-terminator
+
+    strcpy(result, s1);
+    strcat(result, s2);
+
+    return result;
+}
+
+bool isLetter(char ch)
+{
+    /*
+       ASCII
+       65(A) to 90(Z)
+       97(a) to 122(z)
+       (difference of 32)
+    */
+        if((64 < ch) && (ch < 91))//lowercase
+        {
+            return true;
+        }
+        else if((96 < ch) && (ch < 123))//uppercase
+        {
+            return true;
+        }
+        else//not a char
+        {
+            return false;
+        }
+}//END isLetter
+
 bool isNextMatch(char currName[MAX_STRING_LEN],char nextName[MAX_STRING_LEN])
 {
-    //printf("\nCurrName: (%s)", currName);
-    //printf("\nNextName: (%s)", nextName);
+    int i;
 
-    if(currName[1] == nextName[1])
+    int currLength = strlen(currName);//get length of current node's dName
+    int currSeperatorLoc;
+
+    int nextLength = strlen(nextName);//get length of next node's dName
+    int nextSeperatorLoc;
+
+    /*
+    find the '-' seperator. Characters before the '-' will be
+    compared to see if they are from the same account so
+    they can be grouped together. used for totaling amts for a single account
+    with multiple machines
+    */
+    for(i = 0; i<currLength ;i++)
     {
-        if(currName[2] == nextName[2])
-            if(currName[3] == nextName[3])
-                if(currName[4] == nextName[4])
-                {
-                    //printf("\nReturning: True\n");
-                    return true;
-
-                }
+        if(currName[i] == '-')
+        {
+            currSeperatorLoc = i;
+        }
     }
-    else
+
+    for(i = 0; i<nextLength ;i++)
     {
-        //printf("\nReturning: False\n");
+        if(nextName[i] == '-')
+        {
+            nextSeperatorLoc = i;
+        }
+    }
+
+    if(currSeperatorLoc != nextSeperatorLoc)//'-' not in same position in string, automatically reject
+    {
         return false;
-
     }
 
-    //printf("\nReturning: False\n");
-    return false;
+    for(i = 0; i<currSeperatorLoc; i++)
+    {
+        if(currName[i] != nextName[i]) //if something in the string differs before the seperator, reject
+            return false;
+    }
+
+    return true;//all chars in string matched before seperator
 }//END isNextMatch()
 
 bool moneyExists(char mobileAmt[MAX_STRING_LEN])
 {
-    //printf("\nMobile Amt: (%s)", mobileAmt);
     int x = strcmp("$0.00", mobileAmt);
     int y = strcmp("$0.00 ", mobileAmt);
     int z = strcmp(" $0.00", mobileAmt);
-    //printf("\nx: (%d) --- y: (%d) --- z: (%d)",x,y,z);
-    //system("pause");
 
     if(x == 0)
         return false;
@@ -688,10 +680,32 @@ bool moneyExists(char mobileAmt[MAX_STRING_LEN])
         return false;
     else if(z == 0)
         return false;
-
-
-    return true;
+    else
+        return true;
 }
+
+void showHead()
+{
+    printf("\nHead Node: \n");
+    printf("\nDisplay Name: (%s)", head->dName);
+    printf("\nMobile Amt: (%s)", head->mobileAmt);
+    printf("\nDiscount Amt: (%s)", head->discountAmt);
+    printf("\nFee Amt: (%s)", head->feeAmt);
+    printf("\nNet Amt: (%s)", head->netAmt);
+    system("pause");
+    return;
+}//END showHead
+
+void showNode(struct row* node)
+{
+    printf("\nNode Information: \n");
+    printf("\nDisplay Name: (%s)", node->dName);
+    printf("\nMobile Amt: (%s)", node->mobileAmt);
+    printf("\nDiscount Amt: (%s)", node->discountAmt);
+    printf("\nFee Amt: (%s)", node->feeAmt);
+    printf("\nNet Amt: (%s)\n", node->netAmt);
+    return;
+}//END showNode
 
 void showList()
 {
@@ -725,91 +739,4 @@ void countPause(int n)
         system("pause");
     }
     return;
-}
-
-void alternativeSort()
-{
-    /*
-    strcmp(s1,s2)
-
-    strcmp returns neg int if stop char in s1 was LESS than in s2 (s1 < s2) s1 stopping char was closer to a than s2
-           returns pos int if stop char in s1 was MORE than in s2 (s1 > s2) s2 stopping char was closer to a then s1
-           returns 0 if equal
-
-           ASCII
-           65(A) to 90(Z)
-           97(a) to 122(z)
-           (difference of 32)
-    */
-
-    //Local Variable(s)
-    struct row* temp;      //Used to avoid chance of losing HEAD
-    struct row* prevHold;  //Used to retain location of the previous node to use during swapping
-    struct row* hold;      //Used to store data that needs to be saved when swapping
-    char strCurr[MAX_STRING_LEN]; //Curr Node dName
-    char strNext[MAX_STRING_LEN]; //Next Node dName
-    int firstRow = NOTVERIFIED;   //Starting Node Flag
-    bool swapOccured = true;
-    bool beginFlag;
-    int n = 1;int m = 4; int i = 0;
-
-    while(swapOccured == true)//while a swap was made in the prev iteration
-    {
-        /*
-        ++m;
-        if((m % 5) == 0)
-        {
-            printf("\n");
-        }
-        printf("Sort #: (%d) ",++n);
-        */
-        beginFlag = true;
-        swapOccured = false;
-        temp = head;
-
-        while(temp->next != NULL) //while not at end of list
-        {
-
-            //Case 1: Swap Needed
-            if((strcmp(temp->dName,temp->next->dName)) > 0)
-            {
-                if(beginFlag == true)//Case 1: Head of List
-                {
-                    head = temp->next;//Move Head Pointer to newly swapped Node
-                    prevHold = temp->next;//Maintain location of one node back so we can set its next ptr when swapping
-                    temp->next = temp->next->next;//Curr Node now points to TWO Ahead
-                    head->next = temp;//Ahead now points to Curr
-                    swapOccured = true; //Set Swap Flag
-                    beginFlag = false; //Set head of list flag
-                }
-                else if(temp->next->next == NULL)//Case 2: Next Node is the last node in list
-                {
-                    hold = temp->next;
-                    prevHold->next = temp->next;
-                    temp->next= NULL;
-                    hold->next = temp;
-                }
-                else//Case 3: Middle of List
-                {
-                    hold = temp->next;
-                    prevHold->next = temp->next;
-                    prevHold = temp->next;//Maintain location of one node back so we can set its next ptr when swapping
-                    temp->next = temp->next->next;//Curr Node now points to TWO Ahead
-                    hold->next = temp;//Ahead now points to Curr
-                    swapOccured = true; //Set Swap Flag
-                }
-            }
-            //Case 2: Swap NOT Needed
-            else
-            {
-                prevHold = temp;
-                temp = temp->next;//Go to next node
-                beginFlag = false; //Set head of list flag
-            }
-        }
-    }
-
-   //showList();
-    return;
-
 }
