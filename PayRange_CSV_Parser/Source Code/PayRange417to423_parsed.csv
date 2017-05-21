@@ -9,18 +9,18 @@ Altamonte Lakeside - Beverage Machine,$6.50,,$0.33,$6.17,
 Altamonte Lakeside - Snack Machine,$8.50,,$0.47,$8.03,$15.00
 Avella - Pepsi Machine,$31.50,,$1.68,$29.82,
 Avella - Snack Machine,$15.50,$1.00,$0.92,$13.58,$46.00
-Bank of NY LM - Beverage Machine 4th FL,$1.50,,$0.08,$1.42,
+Bank of NY LM - Beverage Machine 4th FL,$1.50,,$0.08,$1.42,$1.50
 Bank of NY Rouse - Beverage Machine 3rd FL,$18.00,$1.50,$0.96,$15.54,
 Bank of NY Rouse - Snack Machine 2nd FL,$3.05,,$0.17,$2.88,
-Bank of NY Rouse - Snack Machine 3rd FL,$11.70,,$0.48,$11.22,$32.75
+Bank of NY Rouse - Snack Machine 3rd FL,$11.70,,$0.48,$11.22,$31.25
 CDM - Beverage Machine 3rd FL,$1.70,,$0.10,$1.60,
 CDM - Snack Machine 3rd FL,$4.35,,$0.23,$4.12,$6.05
 Camping World - Beverage Machine,$5.00,,$0.25,$4.75,
 Camping World - GlassFront Machine,$1.50,,$0.08,$1.42,$6.50
 Center Pointe 2 - Beverage Machine,$6.00,$1.00,$0.30,$4.70,
 Center Pointe 2 - Snack Machine,$2.35,,$0.13,$2.22,$7.35
-Central FL Chrysler - GlassFront Machine Showroom,$5.50,,$0.30,$5.20,
-Cuhaci & Peterson - Snack Machine,$33.85,,$1.86,$31.99,$39.35
+Central FL Chrysler - GlassFront Machine Showroom,$5.50,,$0.30,$5.20,$5.50
+Cuhaci & Peterson - Snack Machine,$33.85,,$1.86,$31.99,$33.85
 DAVE School - Beverage Machine 1st FL,$1.70,$0.85,$0.10,$0.75,
 DAVE School - Beverage Machine 2nd FL,$8.25,,$0.45,$7.80,
 DAVE School - Snack Machine 2nd FL,$2.85,,$0.15,$2.70,
@@ -29,6 +29,7 @@ DBKMSN - Combo Machine 2nd FL,$18.50,$2.50,$1.01,$14.99,$16.00
 DBKSMN - Snack Machine 2nd FL,$6.25,,$0.34,$5.91,$6.25
 EZ Car Rental - Snack Machine,$6.30,,$0.33,$5.97,$6.30
 Fast Mile - Beverage Machine,$40.50,$9.00,$1.62,$29.88,
+Fast Mile - Snack Machine,$13.50,,$0.66,$12.84,
 Fast Mile - Snack Machine,$13.50,,$0.66,$12.84,$45.00
 Fedex Sand Lake - Snack Machine,$2.00,,$0.10,$1.90,$2.00
 Fedex Sanford - Beverage Machine,$31.00,,$1.69,$29.31,
@@ -49,6 +50,8 @@ Herzing - Snack Machine 1st FL,$2.25,,$0.12,$2.13,
 Herzing - Snack Machine 2nd FL,$2.00,,$0.10,$1.90,$16.00
 Hyundai - Snack Machine,$7.30,,$0.39,$6.91,
 Hyundai - Soda Machine,$19.50,,$1.05,$18.45,$26.80
+IHeart Media -  Beverage Machine 4th FL,$10.50,,$0.56,$9.94,
+IHeart Media - Snack Machine 4th FL,$9.50,,$0.49,$9.01,$20.00
 JNR Adjustments - Snack Machine,$2.10,,$0.11,$1.99,$2.10
 Kelly Nissan - Beverage Machine,$33.50,,$1.79,$31.71,
 Kelly Nissan - Snack Machine,$15.20,,$0.85,$14.35,$48.70
@@ -70,4 +73,37 @@ Mitsubishi North - Beverage Machine 4th FL,$0.85,,$0.05,$0.80,
 Mitsubishi North - Snack Machine 5th FL,$6.50,,$0.34,$6.16,$7.35
 Mondelez - Snack Machine,$2.50,,$0.14,$2.36,
 Mondelez - Snack Machine,$21.00,,$1.12,$19.88,$23.50
-Old Dominion - Beverage Main Breakroom
+Old Dominion - Beverage Main Breakroom,$29.50,$3.75,$1.65,$24.10,
+Old Dominion - Pepsi Truckers Lounge,$10.50,,$0.60,$9.90,
+Old Dominion - Snack Main Breakroom,$19.10,,$1.03,$18.07,
+Old Dominion - Trucker Snack,$13.45,,$0.73,$12.72,$68.80
+Old Republic National Title - Beverage Machine,$1.50,,$0.08,$1.42,$1.50
+OnSight Signs - Beverage Machine,$1.50,,$0.08,$1.42,$1.50
+Oracle - Snack Machine,$55.50,$5.00,$2.27,$48.23,$50.50
+Penser - Beverage Machine,$5.00,,$0.31,$4.69,$5.00
+ProHealth - Combo Machine,$12.00,,$0.63,$11.37,$12.00
+Product Quess - Beverage Machine Fentress,$6.00,,$0.32,$5.68,$6.00
+Product Quest - Coke Machine,$0.75,,$0.04,$0.71,
+Product Quest - Generic Beverage Machine,$3.00,,$0.16,$2.84,
+Product Quest - Pepsi Machine,$7.50,$1.50,$0.40,$5.60,
+Product Quest - Snack Machine Fentress,$10.50,,$0.55,$9.95,$20.25
+Reedy Creek Parking Garage - Snack Machine,$69.50,,$3.72,$65.78,$69.50
+Removed From DAVE School GlassFront Machine,$5.50,,$0.30,$5.20,$5.50
+Ring Power - Beverage Machine Track Shop,$34.50,,$1.84,$32.66,
+Ring Power - Coke Machine Main Breakroom,$22.50,,$1.20,$21.30,
+Ring Power - Pepsi Machine Main Breakroom,$11.50,,$0.66,$10.84,
+Ring Power - Pepsi Machine Office Parts,$3.20,,$0.18,$3.02,
+Ring Power - Pepsi Machine Rental Office,$3.00,,$0.16,$2.84,
+Ring Power - Snack Machin  Main Breakroom,$22.50,,$1.23,$21.27,
+Ring Power - Snack Machine Office Parts,$4.50,,$0.24,$4.26,$101.70
+Spectra Flooring - Beverage Machine,$7.50,,$0.42,$7.08,
+Spectra Flooring - Snack Machine,$3.25,,$0.17,$3.08,$10.75
+Subaru - Beverage Machine,$3.75,,$0.20,$3.55,$3.75
+Teague Middle School - Beverage Machine,$0.75,,$0.04,$0.71,$0.75
+The Mortgage Firm - Beverage Machine,$17.10,,$1.00,$16.10,$17.10
+United Baggage - Coke Machine,$3.00,,$0.12,$2.88,
+United Baggage - Pepsi Machine,$25.50,$2.25,$1.02,$22.23,$26.25
+United Ops - Beverage machine,$9.00,$1.50,$0.36,$7.14,$7.50
+
+
+Totals:

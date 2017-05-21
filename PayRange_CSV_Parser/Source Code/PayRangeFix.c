@@ -1,44 +1,44 @@
 /*
-        This program was designed by Alex Arwin
-        a current employee of Gator Vending
-        for use solely by Gator Vending, Inc.
-        It's sole purpose is designed to minimize the
-        grunt work it currently takes to process a
-        weekly PayRange Report.
+    This program was designed by Alex Arwin
+    a current employee of Gator Vending
+    for use solely by Gator Vending, Inc.
+    It's sole purpose is designed to minimize the
+    grunt work it currently takes to process a
+    weekly PayRange Report.
 
-        Current Method:
-            Download File
-            Manually extract useful information
-            Manually adjust columns/rows to readily show information
-            Manually total columns with same Display Names
-            Enter into our accounting software
+    Current Method:
+        Download File
+        Manually extract useful information
+        Manually adjust columns/rows to readily show information
+        Manually total columns with same Display Names
+        Enter into our accounting software
 
-        Goal Method:
-            Download File
-            Run .exe
-            Enter into our accounting software
+    Goal Method:
+        Download File
+        Run .exe
+        Enter into our accounting software
 
-        Assumptions Made:
-            The Downloaded PayRange File does not significantly change format styles over time
-            The Number of Rows in the PayRange File is not extremely large(excess of 1000)
-                --This is mentioned because the methods used to extract, parse, and sort
-                  the data is not exactly efficient and I am okay with this as the data set
-                  is never expected to grow much larger than 500 lines.
-            No Line in the PayRange File is longer than 200 characters
-            No Display Name is longer than 80 characters.
-                --These numbers were chosen after carefully examining the file being parsed in
-                  its original form. They allow some minor expansion to occur without causing
-                  a parsing problem.
+    Assumptions Made:
+        The Downloaded PayRange File does not significantly change format styles over time
+        The Number of Rows in the PayRange File is not extremely large(excess of 1000)
+            --This is mentioned because the methods used to extract, parse, and sort
+              the data is not exactly efficient and I am okay with this as the data set
+              is never expected to grow much larger than 500 lines.
+        No Line in the PayRange File is longer than 200 characters
+        No Display Name is longer than 80 characters.
+            --These numbers were chosen after carefully examining the file being parsed in
+              its original form. They allow some minor expansion to occur without causing
+              a parsing problem.
 
-        Note(s):
-            The Data Structure being implemented is Linked Lists
-            The Sorting Algorithm is Bubble Sort
-            The <zstring.h> is a custom library created with a sole
-                purpose of fixing many of the pitfalls the more
-                common <string.h> standard library experiences. More specifically
-                I make use of it to avoid skipping tokens with no values
-                (like strtok()) currently does. This allows me to account
-                for columns that are blank/empty.
+    Note(s):
+        The Data Structure being implemented is Linked Lists
+        The Sorting Algorithm is Bubble Sort
+        The <zstring.h> is a custom library created with a sole
+            purpose of fixing many of the pitfalls the more
+            common <string.h> standard library experiences. More specifically
+            I make use of it to avoid skipping tokens with no values
+            (like strtok()) currently does. This allows me to account
+            for columns that are blank/empty.
 
 */
 //Header & Library File(s)
@@ -89,6 +89,7 @@ int col_feeAmt;
 int col_netAmt;
 int totalColumns;
 
+struct row* root;//Root of the Linked List. No Mobile,Discount, but Fee Exists, Keep these seperate.
 struct row* head;//Head of the Linked List
 int totalNodes = 1;
 
@@ -99,13 +100,21 @@ void parseHeaders(void);
 struct row* parsePayRangeFile(void);
 void alternativeSort(void);
 void writePayRangeFile(void);
+void printHeaders(FILE*);
+void printRows(FILE*, struct row*);
+void printTotal(FILE*);
+void freeList(struct row*);
 
-void showHead(void);//used to debug
-void showNode(struct row*);//used to debug
-void showList(void);//used to debug
-void countPause(int);//used to debug
+//--Used to Debug During Development
+void showHead(void);
+void showNode(struct row*);
+void showList(void);
+void countPause(int);
 
+//--Helper Functions
 char* concat(const char*, const char*);
+char* iHeartCheck(char [MAX_STRING_LEN]);
+void removeNoCashNodes(void);
 bool isLetter(char);
 bool isNextMatch(char [MAX_STRING_LEN], char [MAX_STRING_LEN]);
 bool moneyExists(char [MAX_STRING_LEN]);
@@ -148,6 +157,9 @@ void run()
 
     printf("Parsing File Now...\n");
     parsePayRangeFile();
+
+    printf("Removing Empty Nodes Now...\n");
+    removeNoCashNodes();
 
     printf("Sorting File Now...\n");
     alternativeSort();
@@ -245,7 +257,7 @@ void parseHeaders()
 struct row* parsePayRangeFile()
 {
     //Local Variable(s)
-    char tempString[MAX_CSV_LEN];
+    char str[MAX_CSV_LEN];
     char *token, *s;
     FILE* stream;
     int count = 2;//Once we grab a line with data we're interested in, we'll actually be in column two (based on csv file format)
@@ -254,27 +266,31 @@ struct row* parsePayRangeFile()
 
     s = concat(filename,".csv");
     stream = fopen(s, "r"); //Open File
-    fgets(tempString, MAX_CSV_LEN, stream); //Get First Line (discard, do not need as it is only headers)
+    fgets(str, MAX_CSV_LEN, stream); //Get First Line (discard, do not need as it is only headers)
 
-    while(fgets(tempString, MAX_CSV_LEN, stream) != NULL)//while there are lines left to read, get one.
+    while(fgets(str, MAX_CSV_LEN, stream) != NULL)//while there are lines left to read, get one.
     {
-        while(strlen(tempString) < MAX_STRING_LEN)
+        while(strlen(str) < MAX_STRING_LEN)
         {
-            fgets(tempString, MAX_CSV_LEN, stream); //skip this line, not what we're looking for
+            fgets(str, MAX_CSV_LEN, stream); //skip this line, not what we're looking for
         }
 
         if(seenFirstNode == VERIFIED && totalNodes > 2)
         {
-            temp->next = (row*)malloc(sizeof(row)); // allocation memory for next row
-            temp = temp->next; //move temp to next row
+            if(moneyExists(temp->mobileAmt))//ONLY ADD NODES THAT HAVE MONEY
+            {
+                temp->next = (row*)malloc(sizeof(row)); // allocation memory for next row
+                temp = temp->next; //move temp to next row
+            }
         }
-        token = zstring_strtok(tempString, comma); //Get First Token from newly grabbed line from file
+
+        token = zstring_strtok(str, comma); //Get First Token from newly grabbed line from file
 
         while(token != NULL) //while there are tokens remaining
         {
             if(col_dName == count)
             {
-                strcpy(temp->dName, token);
+                strcpy(temp->dName, iHeartCheck(token));
             }
             else if(col_mobileAmt == count)
             {
@@ -295,11 +311,11 @@ struct row* parsePayRangeFile()
 
             if(count == totalColumns)//found last item for this node
             {
-                if(seenFirstNode == NOTVERIFIED)
+                if((seenFirstNode == NOTVERIFIED) && moneyExists(temp->mobileAmt))
                 {
                     head = (row*)malloc(sizeof(struct row));
 
-                    strcpy(head->dName, temp->dName);
+                    strcpy(head->dName, iHeartCheck(temp->dName));
                     strcpy(head->mobileAmt, temp->mobileAmt);
                     strcpy(head->discountAmt, temp->discountAmt);
                     strcpy(head->feeAmt, temp->feeAmt);
@@ -311,7 +327,7 @@ struct row* parsePayRangeFile()
                     seenFirstNode = VERIFIED;
                     head->next = temp;//link next node to the head of the list
                 }
-                else
+                else if(moneyExists(temp->mobileAmt))
                 {
                     //Change the String: '$x.xx' to a float value, used when writing new csv file
                     temp->totalAmt = strToFloat(temp->mobileAmt,temp->discountAmt);
@@ -406,61 +422,87 @@ void alternativeSort()
 
 void writePayRangeFile()
 {
-    showList();
     //Local Variable(s)
     FILE* stream;
-    int flag = NOTVERIFIED;   //flag for end of list
     struct row* temp = head;  //temp used to avoid loss of head pointer
-    float totalAmt= 0.00;     //used to store total amounts between nodes of the same account
     char* s = concat(filename, "_parsed.csv");
 
     stream = fopen(s, "w"); //Open a new file to write proper data into
 
     //PRINT HEADERS INTO FILE
+    printHeaders(stream);
+    printRows(stream,temp);
+    printTotal(stream);
+
+    fclose(stream);
+
+    freeList(head);
+    free(s);
+    return;
+
+}//END writePayRangeFile
+
+void printHeaders(FILE* stream)
+{
     fprintf(stream, "Display Name"); fprintf(stream, ",");
     fprintf(stream, "Mobile"); fprintf(stream, ",");
     fprintf(stream, "Discounts"); fprintf(stream, ",");
     fprintf(stream, "Fee"); fprintf(stream, ",");
     fprintf(stream, "Net"); fprintf(stream, ",");
     fprintf(stream, "Total");fprintf(stream, "\n");
+    return;
+}//END printHeaders
 
-    while(flag != VERIFIED) //while there are still rows to go through
+void printRows(FILE* stream, struct row* temp)
+{
+    int flag = NOTVERIFIED;   //flag for end of list
+    float totalAmt= 0.00;     //used to store total amounts between nodes of the same account
+
+    while(flag == NOTVERIFIED)
     {
-        if(moneyExists(temp->mobileAmt)) //if there is money for this specific PayRange then include in file, else delete
+        fprintf(stream, iHeartCheck(temp->dName)); fprintf(stream, ",");//Write Display Name & Comma
+        fprintf(stream, temp->mobileAmt); fprintf(stream, ",");//Write Mobile Amt & Comma
+        fprintf(stream, temp->discountAmt);fprintf(stream, ",");//Write Discount Amt & Comma
+        fprintf(stream, temp->feeAmt); fprintf(stream, ",");//Write Fee Amt & Comma
+        fprintf(stream, temp->netAmt); fprintf(stream, ",");//Write Net Amt & Comma
+
+
+        if(temp->next != NULL)//If there are still more items to come &
         {
-            fprintf(stream, temp->dName); fprintf(stream, ",");//Write Display Name & Comma
-            fprintf(stream, temp->mobileAmt); fprintf(stream, ",");//Write Mobile Amt & Comma
-
-            if(moneyExists(temp->discountAmt))//If there is a Discount Amt: Write it & Comma
-            {
-                fprintf(stream, temp->discountAmt);
-            }fprintf(stream, ",");
-
-
-            fprintf(stream, temp->feeAmt); fprintf(stream, ",");//Write Fee Amt & Comma
-
-            strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));//Remove New Line Char from Net Amt if it exists
-            fprintf(stream, temp->netAmt); fprintf(stream, ",");//Write Net Amt & Comma
-
             if(isNextMatch(temp->dName,temp->next->dName))//CurrName & NextName Match
             {
-
-                if(moneyExists(temp->next->mobileAmt))//If the next Node is actually gonna be written to the file && matches
+                if(temp->next->next != NULL)//CASE 1: NOT AT second to last node
                 {
-                    fprintf(stream, "\n");
-                    totalAmt += temp->totalAmt;
+                    if(moneyExists(temp->next->mobileAmt))//If the next Node is actually gonna be written to the file && matches
+                    {
+                        fprintf(stream, "\n");
+                        totalAmt += temp->totalAmt;
+                    }
+                    else if(isNextMatch(temp->dName,temp->next->next->dName))//otherwise, names match but nextName is not being added, check 2 nodes ahead to see if match occurs
+                    {
+                        fprintf(stream, "\n");
+                        totalAmt += temp->totalAmt;
+                    }
+                    else//names match, but next node isnt being written and the following node is not a match
+                    {
+                        totalAmt += temp->totalAmt;
+                        fprintf(stream, "$%.2f\n", totalAmt);
+                        totalAmt = 0.00;
+                    }
                 }
-                else if(isNextMatch(temp->dName,temp->next->next->dName))//otherwise, names match but nextName is not being added, check 2 nodes ahead to see if match occurs
+                else//Case 2: AT second to last node
                 {
-                    //ERROR IS HERE------*******------- IF WE ARE END OF LIST AND ITEMS ARE NOT GOING TO BE WRITTEN BUT NEXT FEW NODES MATCH, we will never write
-                    fprintf(stream, "\n");
-                    totalAmt += temp->totalAmt;
-                }
-                else//names match, but next node isnt being written and the following node is not a match
-                {
-                    totalAmt += temp->totalAmt;
-                    fprintf(stream, "$%.2f\n", totalAmt);
-                    totalAmt = 0.00;
+                    if(moneyExists(temp->next->mobileAmt))//If the next Node is actually gonna be written to the file && matches
+                    {
+                        fprintf(stream, "\n");
+                        totalAmt += temp->totalAmt;
+                    }
+                    else//names match
+                    {
+                        totalAmt += temp->totalAmt;
+                        fprintf(stream, "$%.2f\n", totalAmt);
+                        totalAmt = 0.00;
+                    }
                 }
             }
             else
@@ -470,26 +512,64 @@ void writePayRangeFile()
                 totalAmt = 0.00;
             }
         }
-
-        if(temp->next->next == NULL)// if we're here ||| ->||| -> NULL
-        {
-            flag = VERIFIED; //We're at the end of list, using temp so we dont use head of list location
-            system("pause");
-        }
         else
         {
-            temp = temp->next; //move to next row
+            totalAmt += temp->totalAmt;
+            fprintf(stream, "$%.2f\n", totalAmt);
         }
+
+    if(temp->next == NULL)
+        flag = VERIFIED; //We're at the end of list, using temp so we dont use head of list location
+    else
+        temp = temp->next; //move to next row
+    }
+
+    return;
+}//END printRows
+
+void printTotal(FILE* stream)
+{
+    struct row* temp = root;
+
+    while(temp != NULL)
+    {
+        fprintf(stream, iHeartCheck(temp->dName)); fprintf(stream, ",");//Write Display Name & Comma
+        fprintf(stream, temp->mobileAmt); fprintf(stream, ",");//Write Mobile Amt & Comma
+        fprintf(stream, temp->discountAmt);fprintf(stream, ",");//Write Discount Amt & Comma
+        fprintf(stream, temp->feeAmt); fprintf(stream, ",");//Write Fee Amt & Comma
+        fprintf(stream, temp->netAmt); fprintf(stream, ",");//Write Net Amt & Comma
+
+        system("pause");
+        temp->totalAmt =- (strToFloat(temp->feeAmt,"$0.00"));
+        system("pause");
+
+        fprintf(stream, "$%.2f\n", temp->totalAmt);
+
+        temp = temp->next;
     }
 
     fprintf(stream, "\n");
     fprintf(stream, "\n");
     fprintf(stream, "Totals:");
-    fclose(stream);
-    free(s);
     return;
 
-}//END writePayRangeFile
+}//END printTotal
+
+void freeList(struct row* root)
+{
+    struct row* temp;
+
+    while(root->next != NULL)//while there are nodes remaining to free
+    {
+        temp = root->next;//move temp to next node over
+        free(root);//free curr node
+        root = temp;//set root to next node
+    }
+
+    free(root);
+    free(temp);
+    return;
+}
 
 float strToFloat(char mobileAmt[MAX_STRING_LEN],char discountAmt[MAX_STRING_LEN])
 {
@@ -598,6 +678,160 @@ char* concat(const char *s1, const char *s2)
     strcat(result, s2);
 
     return result;
+}
+
+char* iHeartCheck(char dName[MAX_STRING_LEN])
+{
+    char iHeart[6] = "iHeart";
+    char IHeart[6] = "IHeart";
+    int i;
+    int count = 0; int counter = 0;
+    int checkLength = 6;
+
+    for(i = 0; i < checkLength; i++)
+    {
+        if(iHeart[i] == dName[i])//first char was Lowercase, we must Uppercase it for sorting purposes
+            count++;
+        else if(IHeart[i] == dName[i])//first char was Uppercase, lowercase it for writing file
+            counter++;
+    }
+
+    if(count == 6)
+        dName[0] = 'I';
+    else if(counter == 6)
+        dName[0] = 'i';
+
+    return dName;
+}//END iHeartCheck
+
+void removeNoCashNodes()
+{
+    struct row* temp = head;
+    struct row* prevNode;
+    struct row* temp2;
+    bool eraseRoot = true;
+    bool firstRootNode = true;
+
+    while(eraseRoot)//Case 1: Remove Root Node until we have a node whose mobileAmt > $0.00
+    {
+        if(!moneyExists(temp->discountAmt))
+        {
+            strcpy(temp->discountAmt,"");
+        }
+
+        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
+
+        if(!moneyExists(temp->mobileAmt))//Erasing Start Node
+        {
+            if(moneyExists(temp->feeAmt))
+            {
+                if(firstRootNode)
+                {
+                    root = temp;
+
+                    head = temp->next;
+                    temp = head;
+
+                    root->next = NULL;
+
+                    firstRootNode = false;
+                }
+                else
+                {
+                    temp2->next = temp;
+                    temp2 = temp;
+
+                    head = temp->next;
+                    temp = head;
+
+                    temp2->next = NULL;
+                }
+            }
+            else
+            {
+                head = temp->next;//Move Head to Next Node (now this is the new start node)
+                free(temp);//free the previous/old head node
+                temp = head;//reset temp to head
+            }
+
+        }
+        else//Not Erasing Start Node
+        {
+            eraseRoot = false;
+            prevNode = temp;//retain this node's location &
+            temp = temp->next;//Move to next node
+        }
+    }
+
+    while(temp->next != NULL)//Case2: Loop thru remainder of list to remove nodes with $0.00 mobileAmts
+    {
+        if(!moneyExists(temp->discountAmt))
+        {
+            strcpy(temp->discountAmt,"");
+        }
+
+        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
+
+        if(!moneyExists(temp->mobileAmt))//Erase this node
+        {
+            if(moneyExists(temp->feeAmt))
+            {
+                if(firstRootNode)
+                {
+                    root = temp;
+
+                    prevNode->next = temp->next;
+                    temp = temp->next;
+
+                    root->next = NULL;
+
+                    firstRootNode = false;
+                }
+                else
+                {
+                    temp2 = temp;
+
+                    head = temp->next;
+                    temp = head;
+
+                    temp2->next = NULL;
+
+                    if(root->next == NULL)
+                    {
+                        root->next = temp2;
+                    }
+                }
+            }
+            else
+            {
+                prevNode->next = temp->next;
+                free(temp);
+                temp = prevNode->next;
+            }
+        }
+        else//money exists, retain node and shift over by one node
+        {
+            prevNode = temp;
+            temp = temp->next;
+        }
+    }
+
+
+    if(!moneyExists(temp->mobileAmt))
+    {//At TAIL NODE, remove tail if money doesn't exist
+        prevNode->next = NULL;
+        free(temp);
+    }
+    else
+    {
+        if(!moneyExists(temp->discountAmt))
+        {
+            strcpy(temp->discountAmt,"");
+        }
+        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
+    }
+
+    return;
 }
 
 bool isLetter(char ch)
