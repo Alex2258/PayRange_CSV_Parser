@@ -141,7 +141,6 @@ int main(int argc, char *argv[])
 
     strcpy(filename, "PayRange58to514");
     run();
-    system("pause");
 
     return;
 }//END main
