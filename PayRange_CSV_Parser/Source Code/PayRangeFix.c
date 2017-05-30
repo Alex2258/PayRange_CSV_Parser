@@ -82,16 +82,16 @@ we need to search the headers and assign what column the data
 we're looking for is in so we can skip extraneous data and only
 store the desired data
 */
-int col_dName;
-int col_mobileAmt;
-int col_discountAmt;
-int col_feeAmt;
-int col_netAmt;
-int totalColumns;
+int col_pos_dName;
+int col_pos_mobileAmt;
+int col_pos_discountAmt;
+int col_pos_feeAmt;
+int col_pos_netAmt;
+int totalColumns = 0;
+int totalNodes = 0;
 
 struct row* root;//Root of the Linked List. No Mobile,Discount, but Fee Exists, Keep these seperate.
 struct row* head;//Head of the Linked List
-int totalNodes = 1;
 
 //Function Declaration(s)/Prototype(s)
 void run(void);
@@ -112,12 +112,13 @@ void showList(void);
 void countPause(int);
 
 //--Helper Functions
+void nullify(struct row*);
 char* concat(const char*, const char*);
-char* iHeartCheck(char [MAX_STRING_LEN]);
 void removeNoCashNodes(void);
 bool isLetter(char);
 bool isNextMatch(char [MAX_STRING_LEN], char [MAX_STRING_LEN]);
-bool moneyExists(char [MAX_STRING_LEN]);
+bool moneyExists(struct row*);
+bool moneyCheck(char [MAX_STRING_LEN]);
 float strToFloat(char [MAX_STRING_LEN], char [MAX_STRING_LEN]);
 char* removeNewLine(char [MAX_STRING_LEN]);
 
@@ -127,6 +128,7 @@ int main(int argc, char *argv[])
     // NOTE ARGC = Argument Count && Argv = Argument Vector
     //filename = *argv[0];
 
+    /*
     strcpy(filename, "PayRange417to423");
     run();
     system("pause");
@@ -140,6 +142,10 @@ int main(int argc, char *argv[])
     system("pause");
 
     strcpy(filename, "PayRange58to514");
+    run();
+    */
+
+    strcpy(filename, "test1234");
     run();
 
     return;
@@ -157,8 +163,8 @@ void run()
     printf("Parsing File Now...\n");
     parsePayRangeFile();
 
-    printf("Removing Empty Nodes Now...\n");
-    removeNoCashNodes();
+    //printf("Removing Empty Nodes Now...\n");
+    //removeNoCashNodes();
 
     printf("Sorting File Now...\n");
     alternativeSort();
@@ -189,7 +195,7 @@ void verifyFileName()
             fclose(stream); //Close the file
 
             printf("Error: File failing to open.\nPlease verify the name is correct and try again: ");
-            scanf("%s", &str); //Ask for correct filename && try again
+            gets(str); //Ask for correct filename && try again
             strcpy(filename, str);
             printf("\n");
         }
@@ -210,7 +216,7 @@ void parseHeaders()
     char str[MAX_CSV_LEN];
     char *token, *s;
     FILE* stream;
-    int count = 0;
+    int col = 0;
 
     s = concat(filename, ".csv");
     stream = fopen(s, "r"); //Open File
@@ -220,47 +226,58 @@ void parseHeaders()
 
     while(token != NULL) //while there are tokens remaining
     {
-        count++;
+        col++;
 
         if(strcmp(token, dName) == 0)
         {
-            col_dName = count; //retain col # of dName header
+            col_pos_dName = col; //retain col # of dName header
         }
         else if(strcmp(token, mobileAmt) == 0)
         {
-            col_mobileAmt = count; //retain col # of mobileAmt header
+            col_pos_mobileAmt = col; //retain col # of mobileAmt header
         }
         else if(strcmp(token, discountAmt) == 0)
         {
-            col_discountAmt = count; //retain col # of discountAmt header
+            col_pos_discountAmt = col; //retain col # of discountAmt header
         }
         else if(strcmp(token, feeAmt) == 0)
         {
-            col_feeAmt = count; //retain col # of feeAmt header
+            col_pos_feeAmt = col; //retain col # of feeAmt header
         }
         else if(strcmp(token, netAmt) == 0)
         {
-            col_netAmt = count; //retain col # of netAmt header
+            col_pos_netAmt = col; //retain col # of netAmt header
         }
 
         token = strtok(NULL, comma); //get next token
     }
 
-    totalColumns = count;//Retain total amount of columns seen in the file
+    totalColumns = col;//Retain total amount of columns seen in the file
 
     fclose(stream); //Close File
 
     return;
 }//END parseHeaders
 
+void nullify(struct row* temp)
+{
+    strcpy(temp->dName,"\0");
+    strcpy(temp->mobileAmt,"\0");
+    strcpy(temp->discountAmt, "\0");
+    strcpy(temp->feeAmt, "\0");
+    strcpy(temp->netAmt,"\0");
+
+    return;
+}
+
 struct row* parsePayRangeFile()
 {
     //Local Variable(s)
+    FILE* stream;
     char str[MAX_CSV_LEN];
     char *token, *s;
-    FILE* stream;
-    int count = 2;//Once we grab a line with data we're interested in, we'll actually be in column two (based on csv file format)
-    int seenFirstNode = NOTVERIFIED;
+    int currCol = 2;//Once we grab a line with data we're interested in, we'll actually be in column two (based on csv file format)
+    int initialNode = NOTVERIFIED;
     struct row* temp = (row*)malloc(sizeof(struct row));
 
     s = concat(filename,".csv");
@@ -274,76 +291,67 @@ struct row* parsePayRangeFile()
             fgets(str, MAX_CSV_LEN, stream); //skip this line, not what we're looking for
         }
 
-        if(seenFirstNode == VERIFIED && totalNodes > 2)
-        {
-            if(moneyExists(temp->mobileAmt))//ONLY ADD NODES THAT HAVE MONEY
-            {
-                temp->next = (row*)malloc(sizeof(row)); // allocation memory for next row
-                temp = temp->next; //move temp to next row
-            }
-        }
-
         token = zstring_strtok(str, comma); //Get First Token from newly grabbed line from file
 
         while(token != NULL) //while there are tokens remaining
         {
-            if(col_dName == count)
-            {
-                strcpy(temp->dName, iHeartCheck(token));
-            }
-            else if(col_mobileAmt == count)
-            {
-                strcpy(temp->mobileAmt, token);
-            }
-            else if(col_discountAmt == count)
-            {
-                strcpy(temp->discountAmt, token);
-            }
-            else if(col_feeAmt == count)
-            {
-                strcpy(temp->feeAmt, token);
-            }
-            else if(col_netAmt == count)
-            {
-                strcpy(temp->netAmt, token);
-            }
+                /* Determine if the current column is data we need, and store it accordingly */
+                if(currCol == col_pos_dName)
+                    strcpy(temp->dName, token);
+                else if(currCol == col_pos_mobileAmt)
+                    strcpy(temp->mobileAmt, token);
+                else if(currCol == col_pos_discountAmt)
+                    strcpy(temp->discountAmt, token);
+                else if(currCol == col_pos_feeAmt)
+                    strcpy(temp->feeAmt, token);
+                else if(currCol == col_pos_netAmt)
+                    strcpy(temp->netAmt, removeNewLine(token));
 
-            if(count == totalColumns)//found last item for this node
+            if(currCol == totalColumns)//found last item for this node, save it and create new node
             {
-                if((seenFirstNode == NOTVERIFIED) && moneyExists(temp->mobileAmt))
+                showNode(temp);
+
+                if(moneyExists(temp))//Only add node to list if it has money
                 {
-                    head = (row*)malloc(sizeof(struct row));
-
-                    strcpy(head->dName, iHeartCheck(temp->dName));
-                    strcpy(head->mobileAmt, temp->mobileAmt);
-                    strcpy(head->discountAmt, temp->discountAmt);
-                    strcpy(head->feeAmt, temp->feeAmt);
-                    strcpy(head->netAmt, temp->netAmt);
-
-                    //Change the String: '$x.xx' to a float value, used when writing new csv file
-                    head->totalAmt = strToFloat(head->mobileAmt,head->discountAmt);
-
-                    seenFirstNode = VERIFIED;
-                    head->next = temp;//link next node to the head of the list
-                }
-                else if(moneyExists(temp->mobileAmt))
-                {
+                    printf("\nAdding Node Now!");
                     //Change the String: '$x.xx' to a float value, used when writing new csv file
                     temp->totalAmt = strToFloat(temp->mobileAmt,temp->discountAmt);
+
+                    if(initialNode == NOTVERIFIED)
+                    {
+                        temp->next = (struct row*)malloc(sizeof(struct row*)); //Allocate Mem for Next Node
+                        head = temp;//link head to the first node created and assigned
+                        temp = temp->next;//move temp to newly created blank node
+
+                        initialNode = VERIFIED;//mark first(head) node as verified
+                    }
+                    else
+                    {
+                        temp->next = (struct row*)malloc(sizeof(struct row*)); //Allocate Mem for Next Node
+                        temp = temp->next;
+                    }
+                }
+                else
+                {
+                    printf("\nNulling Unuseable Node now!");
+                    nullify(temp);
                 }
 
-                count = 2; //reset counter
+                currCol = 2; //reset counter
                 token = NULL;//reset our token
                 totalNodes++;//increment our totalNodes(total rows) counter
+
             }
             else
             {
                 token = zstring_strtok(NULL, comma); //get next token
-                count++; //adjust column over
+                currCol++; //adjust column over
             }
         }
     }
 
+    system("pause");
+    exit(0);
     return;
 }//End parsePayRangeFile
 
@@ -459,7 +467,7 @@ void printRows(FILE* stream, struct row* temp)
 
     while(flag == NOTVERIFIED)
     {
-        fprintf(stream, iHeartCheck(temp->dName)); fprintf(stream, ",");//Write Display Name & Comma
+        fprintf(stream, temp->dName); fprintf(stream, ",");//Write Display Name & Comma
         fprintf(stream, temp->mobileAmt); fprintf(stream, ",");//Write Mobile Amt & Comma
         fprintf(stream, temp->discountAmt);fprintf(stream, ",");//Write Discount Amt & Comma
         fprintf(stream, temp->feeAmt); fprintf(stream, ",");//Write Fee Amt & Comma
@@ -472,7 +480,7 @@ void printRows(FILE* stream, struct row* temp)
             {
                 if(temp->next->next != NULL)//CASE 1: NOT AT second to last node
                 {
-                    if(moneyExists(temp->next->mobileAmt))//If the next Node is actually gonna be written to the file && matches
+                    if(moneyExists(temp->next))//If the next Node is actually gonna be written to the file && matches
                     {
                         fprintf(stream, "\n");
                         totalAmt += temp->totalAmt;
@@ -491,7 +499,7 @@ void printRows(FILE* stream, struct row* temp)
                 }
                 else//Case 2: AT second to last node
                 {
-                    if(moneyExists(temp->next->mobileAmt))//If the next Node is actually gonna be written to the file && matches
+                    if(moneyExists(temp->next))//If the next Node is actually gonna be written to the file && matches
                     {
                         fprintf(stream, "\n");
                         totalAmt += temp->totalAmt;
@@ -532,7 +540,7 @@ void printTotal(FILE* stream)
 
     while(temp != NULL)
     {
-        fprintf(stream, iHeartCheck(temp->dName)); fprintf(stream, ",");//Write Display Name & Comma
+        fprintf(stream, temp->dName); fprintf(stream, ",");//Write Display Name & Comma
         fprintf(stream, temp->mobileAmt); fprintf(stream, ",");//Write Mobile Amt & Comma
         fprintf(stream, temp->discountAmt);fprintf(stream, ",");//Write Discount Amt & Comma
         fprintf(stream, temp->feeAmt); fprintf(stream, ",");//Write Fee Amt & Comma
@@ -554,18 +562,18 @@ void printTotal(FILE* stream)
 
 }//END printTotal
 
-void freeList(struct row* root)
+void freeList(struct row* node)
 {
     struct row* temp;
 
-    while(root->next != NULL)//while there are nodes remaining to free
+    while(node->next != NULL)//while there are nodes remaining to free
     {
-        temp = root->next;//move temp to next node over
-        free(root);//free curr node
-        root = temp;//set root to next node
+        temp = node->next;//move temp to next node over
+        free(node);//free curr node
+        node = temp;//set root to next node
     }
 
-    free(root);
+    free(node);
     free(temp);
     return;
 }
@@ -679,30 +687,7 @@ char* concat(const char *s1, const char *s2)
     return result;
 }
 
-char* iHeartCheck(char dName[MAX_STRING_LEN])
-{
-    char iHeart[6] = "iHeart";
-    char IHeart[6] = "IHeart";
-    int i;
-    int count = 0; int counter = 0;
-    int checkLength = 6;
-
-    for(i = 0; i < checkLength; i++)
-    {
-        if(iHeart[i] == dName[i])//first char was Lowercase, we must Uppercase it for sorting purposes
-            count++;
-        else if(IHeart[i] == dName[i])//first char was Uppercase, lowercase it for writing file
-            counter++;
-    }
-
-    if(count == 6)
-        dName[0] = 'I';
-    else if(counter == 6)
-        dName[0] = 'i';
-
-    return dName;
-}//END iHeartCheck
-
+/*
 void removeNoCashNodes()
 {
     struct row* temp = head;
@@ -831,8 +816,8 @@ void removeNoCashNodes()
     }
 
     return;
-}
-
+}//END noCashNodes
+*/
 bool isLetter(char ch)
 {
     /*
@@ -901,11 +886,40 @@ bool isNextMatch(char currName[MAX_STRING_LEN],char nextName[MAX_STRING_LEN])
     return true;//all chars in string matched before seperator
 }//END isNextMatch()
 
-bool moneyExists(char mobileAmt[MAX_STRING_LEN])
+bool moneyExists(struct row* node)
 {
-    int x = strcmp("$0.00", mobileAmt);
-    int y = strcmp("$0.00 ", mobileAmt);
-    int z = strcmp(" $0.00", mobileAmt);
+    printf("\nMade in to moneyExists and mobileAmt is: (%s)\n", node->mobileAmt); system("pause");
+    if(moneyCheck(node->mobileAmt))
+    {
+        printf("\nCheck #1\n");
+        return true;
+    }
+    else if(moneyCheck(node->discountAmt))
+    {
+         printf("\nCheck #2\n");
+         return true;
+    }
+    else if(moneyCheck(node->feeAmt))
+    {
+        printf("\nCheck #3\n");
+        return true;
+    }
+    else
+    {
+        printf("\nCheck#4\n");
+        return false;
+    }
+
+}
+
+bool moneyCheck(char* amt)
+{
+    system("pause");
+    printf("\nCompare Started");
+    int x = strcmp("$0.00", amt);
+    int y = strcmp("$0.00 ", amt);
+    int z = strcmp(" $0.00", amt);
+    printf("\nCompare Finished");
 
     if(x == 0)
         return false;
