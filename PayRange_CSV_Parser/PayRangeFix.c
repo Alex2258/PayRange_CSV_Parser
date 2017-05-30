@@ -90,14 +90,14 @@ int col_pos_netAmt;
 int totalColumns = 0;
 int totalNodes = 0;
 
-struct row* root;//Root of the Linked List. No Mobile,Discount, but Fee Exists, Keep these seperate.
-struct row* head;//Head of the Linked List
+struct row* root = NULL;//Root of the Linked List. No Mobile,Discount, but Fee Exists, Keep these seperate.
+struct row* head = NULL;//Head of the Linked List
 
 //Function Declaration(s)/Prototype(s)
 void run(void);
 void verifyFileName(void);
 void parseHeaders(void);
-struct row* parsePayRangeFile(void);
+void parsePayRangeFile(void);
 void alternativeSort(void);
 void writePayRangeFile(void);
 void printHeaders(FILE*);
@@ -162,9 +162,6 @@ void run()
 
     printf("Parsing File Now...\n");
     parsePayRangeFile();
-
-    //printf("Removing Empty Nodes Now...\n");
-    //removeNoCashNodes();
 
     printf("Sorting File Now...\n");
     alternativeSort();
@@ -270,7 +267,7 @@ void nullify(struct row* temp)
     return;
 }
 
-struct row* parsePayRangeFile()
+void parsePayRangeFile()
 {
     //Local Variable(s)
     FILE* stream;
@@ -278,7 +275,7 @@ struct row* parsePayRangeFile()
     char *token, *s;
     int currCol = 2;//Once we grab a line with data we're interested in, we'll actually be in column two (based on csv file format)
     int initialNode = NOTVERIFIED;
-    struct row* temp = (row*)malloc(sizeof(struct row));
+    struct row* temp = (struct row*)malloc(sizeof(struct row));
 
     s = concat(filename,".csv");
     stream = fopen(s, "r"); //Open File
@@ -309,17 +306,17 @@ struct row* parsePayRangeFile()
 
             if(currCol == totalColumns)//found last item for this node, save it and create new node
             {
-                showNode(temp);
+                //showNode(temp);
 
                 if(moneyExists(temp))//Only add node to list if it has money
                 {
-                    printf("\nAdding Node Now!");
                     //Change the String: '$x.xx' to a float value, used when writing new csv file
                     temp->totalAmt = strToFloat(temp->mobileAmt,temp->discountAmt);
 
                     if(initialNode == NOTVERIFIED)
                     {
-                        temp->next = (struct row*)malloc(sizeof(struct row*)); //Allocate Mem for Next Node
+                        //printf("\nAdding Head Now!");
+                        temp->next = (struct row*)malloc(sizeof(struct row)); //Allocate Mem for Next Node
                         head = temp;//link head to the first node created and assigned
                         temp = temp->next;//move temp to newly created blank node
 
@@ -327,14 +324,14 @@ struct row* parsePayRangeFile()
                     }
                     else
                     {
-                        temp->next = (struct row*)malloc(sizeof(struct row*)); //Allocate Mem for Next Node
+                        //printf("\nAdding Middle of List Now!");
+                        temp->next = (struct row*)malloc(sizeof(struct row)); //Allocate Mem for Next Node
                         temp = temp->next;
                     }
                 }
                 else
                 {
-                    printf("\nNulling Unuseable Node now!");
-                    nullify(temp);
+                    //printf("\nNot Adding Node Now!");
                 }
 
                 currCol = 2; //reset counter
@@ -350,13 +347,13 @@ struct row* parsePayRangeFile()
         }
     }
 
-    system("pause");
-    exit(0);
+
     return;
 }//End parsePayRangeFile
 
 void alternativeSort()
 {
+    showList();
     /*
     strcmp(s1,s2)
 
@@ -386,7 +383,7 @@ void alternativeSort()
         while(temp->next != NULL) //while not at end of list
         {
             //Case 1: Swap Needed
-            if((strcmp(temp->dName,temp->next->dName)) > 0)
+            if((strcmp(temp->dName,temp->next->dName)) > 0)//indicates the first node is lower in alphabet then second, swap needed
             {
                 if(beginFlag == true)//Case 1: Head of List
                 {
@@ -438,7 +435,7 @@ void writePayRangeFile()
 
     //PRINT HEADERS INTO FILE
     printHeaders(stream);
-    printRows(stream,temp);
+    printRows(stream, temp);
     printTotal(stream);
 
     fclose(stream);
@@ -451,17 +448,19 @@ void writePayRangeFile()
 
 void printHeaders(FILE* stream)
 {
-    fprintf(stream, "Display Name"); fprintf(stream, ",");
-    fprintf(stream, "Mobile"); fprintf(stream, ",");
-    fprintf(stream, "Discounts"); fprintf(stream, ",");
-    fprintf(stream, "Fee"); fprintf(stream, ",");
-    fprintf(stream, "Net"); fprintf(stream, ",");
-    fprintf(stream, "Total");fprintf(stream, "\n");
+    fprintf(stream, "Display Name,");
+    fprintf(stream, "Mobile,");
+    fprintf(stream, "Discounts,");
+    fprintf(stream, "Fee,");
+    fprintf(stream, "Net,");
+    fprintf(stream, "Total\n");
     return;
 }//END printHeaders
 
 void printRows(FILE* stream, struct row* temp)
 {
+    showHead();
+    system("pause");
     int flag = NOTVERIFIED;   //flag for end of list
     float totalAmt= 0.00;     //used to store total amounts between nodes of the same account
 
@@ -476,59 +475,29 @@ void printRows(FILE* stream, struct row* temp)
 
         if(temp->next != NULL)//If there are still more items to come &
         {
-            if(isNextMatch(temp->dName,temp->next->dName))//CurrName & NextName Match
+            if(isNextMatch(temp->dName,temp->next->dName))//CurrName & NextName Match, don't write total
             {
-                if(temp->next->next != NULL)//CASE 1: NOT AT second to last node
-                {
-                    if(moneyExists(temp->next))//If the next Node is actually gonna be written to the file && matches
-                    {
-                        fprintf(stream, "\n");
-                        totalAmt += temp->totalAmt;
-                    }
-                    else if(isNextMatch(temp->dName,temp->next->next->dName))//otherwise, names match but nextName is not being added, check 2 nodes ahead to see if match occurs
-                    {
-                        fprintf(stream, "\n");
-                        totalAmt += temp->totalAmt;
-                    }
-                    else//names match, but next node isnt being written and the following node is not a match
-                    {
-                        totalAmt += temp->totalAmt;
-                        fprintf(stream, "$%.2f\n", totalAmt);
-                        totalAmt = 0.00;
-                    }
-                }
-                else//Case 2: AT second to last node
-                {
-                    if(moneyExists(temp->next))//If the next Node is actually gonna be written to the file && matches
-                    {
-                        fprintf(stream, "\n");
-                        totalAmt += temp->totalAmt;
-                    }
-                    else//names match
-                    {
-                        totalAmt += temp->totalAmt;
-                        fprintf(stream, "$%.2f\n", totalAmt);
-                        totalAmt = 0.00;
-                    }
-                }
+                fprintf(stream, "\n");
+                totalAmt += temp->totalAmt;
             }
-            else
+            else//not a match, write total
             {
                 totalAmt += temp->totalAmt;
                 fprintf(stream, "$%.2f\n", totalAmt);
                 totalAmt = 0.00;
             }
         }
-        else
+        else//at last node, write total
         {
             totalAmt += temp->totalAmt;
             fprintf(stream, "$%.2f\n", totalAmt);
         }
 
-    if(temp->next == NULL)
-        flag = VERIFIED; //We're at the end of list, using temp so we dont use head of list location
-    else
-        temp = temp->next; //move to next row
+
+        if(temp->next == NULL)
+            flag = VERIFIED; //We're at the end of list, using temp so we dont use head of list location
+        else
+            temp = temp->next; //move to next row
     }
 
     return;
@@ -687,137 +656,6 @@ char* concat(const char *s1, const char *s2)
     return result;
 }
 
-/*
-void removeNoCashNodes()
-{
-    struct row* temp = head;
-    struct row* prevNode;
-    struct row* temp2;
-    bool eraseRoot = true;
-    bool firstRootNode = true;
-
-    while(eraseRoot)//Case 1: Remove Root Node until we have a node whose mobileAmt > $0.00
-    {
-        if(!moneyExists(temp->discountAmt))
-        {
-            strcpy(temp->discountAmt,"");
-        }
-
-        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
-
-        if(!moneyExists(temp->mobileAmt))//Erasing Start Node
-        {
-            if(moneyExists(temp->feeAmt))
-            {
-                if(firstRootNode)
-                {
-                    root = temp;
-
-                    head = temp->next;
-                    temp = head;
-
-                    root->next = NULL;
-
-                    firstRootNode = false;
-                }
-                else
-                {
-                    temp2->next = temp;
-                    temp2 = temp;
-
-                    head = temp->next;
-                    temp = head;
-
-                    temp2->next = NULL;
-                }
-            }
-            else
-            {
-                head = temp->next;//Move Head to Next Node (now this is the new start node)
-                free(temp);//free the previous/old head node
-                temp = head;//reset temp to head
-            }
-
-        }
-        else//Not Erasing Start Node
-        {
-            eraseRoot = false;
-            prevNode = temp;//retain this node's location &
-            temp = temp->next;//Move to next node
-        }
-    }
-
-    while(temp->next != NULL)//Case2: Loop thru remainder of list to remove nodes with $0.00 mobileAmts
-    {
-        if(!moneyExists(temp->discountAmt))
-        {
-            strcpy(temp->discountAmt,"");
-        }
-
-        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
-
-        if(!moneyExists(temp->mobileAmt))//Erase this node
-        {
-            if(moneyExists(temp->feeAmt))
-            {
-                if(firstRootNode)
-                {
-                    root = temp;
-
-                    prevNode->next = temp->next;
-                    temp = temp->next;
-
-                    root->next = NULL;
-
-                    firstRootNode = false;
-                }
-                else
-                {
-                    temp2 = temp;
-
-                    head = temp->next;
-                    temp = head;
-
-                    temp2->next = NULL;
-
-                    if(root->next == NULL)
-                    {
-                        root->next = temp2;
-                    }
-                }
-            }
-            else
-            {
-                prevNode->next = temp->next;
-                free(temp);
-                temp = prevNode->next;
-            }
-        }
-        else//money exists, retain node and shift over by one node
-        {
-            prevNode = temp;
-            temp = temp->next;
-        }
-    }
-
-
-    if(!moneyExists(temp->mobileAmt))
-    {//At TAIL NODE, remove tail if money doesn't exist
-        prevNode->next = NULL;
-        free(temp);
-    }
-    else
-    {
-        if(!moneyExists(temp->discountAmt))
-        {
-            strcpy(temp->discountAmt,"");
-        }
-        strcpy(temp->netAmt, (removeNewLine(temp->netAmt)));
-    }
-
-    return;
-}//END noCashNodes
-*/
 bool isLetter(char ch)
 {
     /*
@@ -888,38 +726,38 @@ bool isNextMatch(char currName[MAX_STRING_LEN],char nextName[MAX_STRING_LEN])
 
 bool moneyExists(struct row* node)
 {
-    printf("\nMade in to moneyExists and mobileAmt is: (%s)\n", node->mobileAmt); system("pause");
+    //printf("\nMade in to moneyExists and mobileAmt is: (%s)\n", node->mobileAmt); system("pause");
     if(moneyCheck(node->mobileAmt))
     {
-        printf("\nCheck #1\n");
+        //printf("\nCheck #1\n");
         return true;
     }
     else if(moneyCheck(node->discountAmt))
     {
-         printf("\nCheck #2\n");
+         //printf("\nCheck #2\n");
          return true;
     }
     else if(moneyCheck(node->feeAmt))
     {
-        printf("\nCheck #3\n");
+        //printf("\nCheck #3\n");
         return true;
     }
     else
     {
-        printf("\nCheck#4\n");
+        //printf("\nCheck#4\n");
         return false;
     }
 
 }
 
-bool moneyCheck(char* amt)
+bool moneyCheck(char amt[MAX_STRING_LEN])
 {
-    system("pause");
-    printf("\nCompare Started");
+    //system("pause");
+    //printf("\nCompare Started");
     int x = strcmp("$0.00", amt);
     int y = strcmp("$0.00 ", amt);
     int z = strcmp(" $0.00", amt);
-    printf("\nCompare Finished");
+    //printf("\nCompare Finished\n");
 
     if(x == 0)
         return false;
@@ -939,6 +777,13 @@ void showHead()
     printf("\nDiscount Amt: (%s)", head->discountAmt);
     printf("\nFee Amt: (%s)", head->feeAmt);
     printf("\nNet Amt: (%s)", head->netAmt);
+
+    printf("\nHead Node: \n");
+    printf("\nDisplay Name: (%s)", head->next->dName);
+    printf("\nMobile Amt: (%s)", head->next->mobileAmt);
+    printf("\nDiscount Amt: (%s)", head->next->discountAmt);
+    printf("\nFee Amt: (%s)", head->next->feeAmt);
+    printf("\nNet Amt: (%s)", head->next->netAmt);
     system("pause");
     return;
 }//END showHead
